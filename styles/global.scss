@@ -1,3 +1,5 @@
+@use "./partials/mixins" as *;
+
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -42,11 +44,8 @@ body {
     width: 100vw;
     padding: 0rem 1rem;
 
-    &__title {
-        font-family: 'Avenir-Next';
-        font-weight: 400;
-        font-style: normal;
-        font-size: 1.75rem;
+    &__title {    
+        @include mobile-page-header;    
         line-height: 1.23rem;
         color: #fff;
         height: fit-content;

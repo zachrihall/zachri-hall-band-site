@@ -1,4 +1,7 @@
 @use "./global.scss" as *;
+@use "./partials/mixins" as *;
+
+
 
 .navbar__current-page {
     color: #fff;
@@ -6,6 +9,9 @@
 }
 
 .hero {
+    display: flex;
+    align-items: center;
+    justify-content: start;
     width: 100vw;
     padding: 0rem 1rem;
     background-image: url("../assets/Images/hero-bio.jpg");
@@ -14,8 +20,10 @@
     height: 65vh;
 
     &__title {
+        @include mobile-section-header;
         color: #fff;
         z-index: 1;
     }
+
 
 }

@@ -1,0 +1,13 @@
+@mixin mobile-page-header {
+    font-family: 'Avenir-Next';
+    font-style: normal;
+    font-size: 1.75rem;
+    font-weight: 400;
+}
+
+@mixin mobile-section-header {
+    font-family: 'Avenir-Next';
+    font-style: normal;
+    font-weight: 600;
+}
+
