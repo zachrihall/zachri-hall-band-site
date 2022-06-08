@@ -4,13 +4,14 @@
 }
 
 body {
+    /*The padding and everything below for now is only for mobile sites!*/
     min-width: 320px;
 }
 
 @font-face {
     font-family: 'Avenir-Next';
     src: url(../assets/Font/AvenirNextLTPro-Regular.otf) format("opentype"),
-         url(../assets/Font/alternative/AvenirNextLTPro.ttf) format("truetype");
+        url(../assets/Font/alternative/AvenirNextLTPro.ttf) format("truetype");
     font-weight: 400;
     font-style: normal;
 }
@@ -18,7 +19,7 @@ body {
 @font-face {
     font-family: 'Avenir-Next';
     src: url(../assets/Font/AvenirNextLTPro-Bold.otf) format("opentype"),
-         url(../assets/Font/alternative/AvenirNextLTProBold.ttf) format("truetype");
+        url(../assets/Font/alternative/AvenirNextLTProBold.ttf) format("truetype");
     font-weight: 700;
     font-style: normal;
 }
@@ -26,7 +27,7 @@ body {
 @font-face {
     font-family: 'Avenir-Next';
     src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format("opentype"),
-         url(../assets/Font/alternative/AvenirNextLTProDemi.ttf) format("truetype");
+        url(../assets/Font/alternative/AvenirNextLTProDemi.ttf) format("truetype");
     font-weight: 600;
     font-style: normal;
 }
@@ -38,11 +39,11 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: #323232;
-    width: 100%;
-
+    width: 100vw;
+    padding: 0rem 1rem;
 
     &__title {
-        font-family:'Avenir-Next';
+        font-family: 'Avenir-Next';
         font-weight: 400;
         font-style: normal;
         font-size: 1.75rem;
@@ -51,7 +52,7 @@ body {
         height: fit-content;
         margin-top: 1rem;
     }
-    
+
     &__links-list {
         display: flex;
         width: 100%;
@@ -68,5 +69,14 @@ body {
         color: #AFAFAF;
         font-family: 'Avenir-Next';
         font-size: 0.9rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0.69rem;
+
+        &:hover {
+            color: #fff;
+            border-bottom: 3px solid white;
+        }
     }
 }

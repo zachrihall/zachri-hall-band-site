@@ -4,3 +4,18 @@
     color: #fff;
     border-bottom: 3px solid white;
 }
+
+.hero {
+    width: 100vw;
+    padding: 0rem 1rem;
+    background-image: url("../assets/Images/hero-bio.jpg");
+    background-repeat: none;
+    background-size: cover;
+    height: 65vh;
+
+    &__title {
+        color: #fff;
+        z-index: 1;
+    }
+
+}

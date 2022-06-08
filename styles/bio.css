@@ -4,6 +4,7 @@
 }
 
 body {
+  /*The padding and everything below for now is only for mobile sites!*/
   min-width: 320px;
 }
 
@@ -30,7 +31,8 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #323232;
-  width: 100%;
+  width: 100vw;
+  padding: 0rem 1rem;
 }
 .navbar__title {
   font-family: "Avenir-Next";
@@ -59,9 +61,30 @@ body {
   color: #AFAFAF;
   font-family: "Avenir-Next";
   font-size: 0.9rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.69rem;
+}
+.navbar__link:hover {
+  color: #fff;
+  border-bottom: 3px solid white;
 }
 
 .navbar__current-page {
   color: #fff;
   border-bottom: 3px solid white;
+}
+
+.hero {
+  width: 100vw;
+  padding: 0rem 1rem;
+  background-image: url("../assets/Images/hero-bio.jpg");
+  background-repeat: none;
+  background-size: cover;
+  height: 65vh;
+}
+.hero__title {
+  color: #fff;
+  z-index: 1;
 }/*# sourceMappingURL=bio.css.map */
