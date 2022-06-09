@@ -1,13 +1,39 @@
+@use "./fonts" as *;
+
 @mixin mobile-page-header {
     font-family: 'Avenir-Next';
     font-style: normal;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 400;
+    color: #323232;
 }
 
 @mixin mobile-section-header {
     font-family: 'Avenir-Next';
     font-style: normal;
+    font-size: 1.5rem;
     font-weight: 600;
+    color: #323232;
+    /*Adds 8 to the already 16 padding to have 24 padding for section headers*/
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+@mixin mobile-sub-header {
+    font-family: 'Avenir-Next';
+    font-style: normal;
+    font-size: 1.14rem;
+    font-weight: 400;
+    color: #323232;
+    padding-bottom: 1rem;
+}
+
+@mixin mobile-body-copy {
+    font-family: 'Avenir-Next';
+    font-style: normal;
+    font-size: 0.8rem;
+    line-height: 1.12rem;
+    font-weight: 400;
+    color: #323232
 }
 

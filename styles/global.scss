@@ -1,3 +1,4 @@
+@use "./partials/bio" as *;
 @use "./partials/mixins" as *;
 
 * {
@@ -10,30 +11,17 @@ body {
     min-width: 320px;
 }
 
-@font-face {
-    font-family: 'Avenir-Next';
-    src: url(../assets/Font/AvenirNextLTPro-Regular.otf) format("opentype"),
-        url(../assets/Font/alternative/AvenirNextLTPro.ttf) format("truetype");
-    font-weight: 400;
-    font-style: normal;
+section {
+    /*Mobile site padding*/
+    padding: 1rem;
+
 }
 
-@font-face {
-    font-family: 'Avenir-Next';
-    src: url(../assets/Font/AvenirNextLTPro-Bold.otf) format("opentype"),
-        url(../assets/Font/alternative/AvenirNextLTProBold.ttf) format("truetype");
-    font-weight: 700;
-    font-style: normal;
+div {
+    display: flex;
+    flex-direction: column;
+    // gap: 1rem 0rem;
 }
-
-@font-face {
-    font-family: 'Avenir-Next';
-    src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format("opentype"),
-        url(../assets/Font/alternative/AvenirNextLTProDemi.ttf) format("truetype");
-    font-weight: 600;
-    font-style: normal;
-}
-
 
 
 .navbar {
@@ -42,14 +30,13 @@ body {
     align-items: center;
     background-color: #323232;
     width: 100vw;
-    padding: 0rem 1rem;
+    padding-bottom: 0rem;
 
-    &__title {    
-        @include mobile-page-header;    
+    &__title {
+        @include mobile-page-header;
         line-height: 1.23rem;
         color: #fff;
         height: fit-content;
-        margin-top: 1rem;
     }
 
     &__links-list {
@@ -64,10 +51,12 @@ body {
         width: 50%;
     }
 
+
     &__link {
+        @include mobile-sub-header;
         color: #AFAFAF;
         font-family: 'Avenir-Next';
-        font-size: 0.9rem;
+        font-size: 1rem;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -77,5 +66,11 @@ body {
             color: #fff;
             border-bottom: 3px solid white;
         }
+
+        &-current-page {
+            color: #fff;
+            border-bottom: 3px solid white;
+        }
     }
+
 }
