@@ -1,17 +1,19 @@
 @use "./mixins" as *;
+@use "./variables" as *;
 
 .navbar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #323232;
+    background-color: $black;
     width: 100vw;
-    padding-bottom: 0rem;
+    padding: 0rem;
+    padding-top: 1rem;
 
     &__title {
         @include mobile-page-header;
         line-height: 1.23rem;
-        color: #fff;
+        color: $white;
         height: fit-content;
     }
 
@@ -30,7 +32,7 @@
 
     &__link {
         @include mobile-sub-header;
-        color: #AFAFAF;
+        color: $silver;
         font-family: 'Avenir-Next';
         font-size: 1rem;
         width: 100%;
@@ -39,13 +41,13 @@
         padding: 0.69rem;
 
         &:hover {
-            color: #fff;
-            border-bottom: 3px solid white;
+            color: $white;
+            border-bottom: 3px solid $white;
         }
 
         &-current-page {
-            color: #fff;
-            border-bottom: 3px solid white;
+            color: $white;
+            border-bottom: 3px solid $white;
         }
     }
 

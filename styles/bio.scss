@@ -5,28 +5,31 @@
 @use "../styles/partials/footer" as *;
 
 .hero {
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: start;
     width: 100vw;
-    height: 15rem;
-    // padding: 0rem 1rem;
     background-image: url("../assets/Images/hero-bio.jpg");
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-size: cover;
     
     position: relative;
 
     &__header {
         @include mobile-section-header;
-        color: #fff;
+        color: white;
         z-index: 1;
         position: relative;
+        left: 1rem;
+        margin: 5rem 0rem;
     }
 
     &__overlay{
         background-color: #323232;
         opacity: 50%;
+        height: 100%;
+        width: 100%;
         position: absolute;
     }
 }
@@ -65,7 +68,7 @@
 
         &-subheader {
             @include mobile-body-copy;
-            color: black;
+            color: $dark-black;
 
         }
     }

@@ -1,7 +1,8 @@
 @use "./mixins" as *;
+@use "./variables" as *;
 
 .footer {
-    background-color: #323232;
+    background-color: $black;
 
     &__points-of-contact {
         gap: 1rem 0rem;
@@ -10,12 +11,11 @@
 
     &__poc {
         gap: 1rem 0rem;
-        // padding: 1rem 0rem;
     }
 
     &__section-header {
         @include mobile-section-header;
-        color: #fff;
+        color: $white;
     }
 
     &__icons {
@@ -25,7 +25,7 @@
 
     &__poc {
         @include mobile-body-copy;
-        color: #fff;
+        color: $white;
 
         &-name-company-container {
             font-weight: 600;
@@ -45,12 +45,12 @@
         gap: 0.5rem 0rem;
         &-title {
             @include mobile-page-header;
-            color: #fff;
+            color: $white;
         }
 
         &-text {
             @include mobile-body-copy;
-            color: #fff;
+            color: $white;
             font-size: 0.7rem;
         }
     }

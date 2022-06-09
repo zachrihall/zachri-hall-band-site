@@ -22,7 +22,8 @@
   align-items: center;
   background-color: #323232;
   width: 100vw;
-  padding-bottom: 0rem;
+  padding: 0rem;
+  padding-top: 1rem;
 }
 .navbar__title {
   font-family: "Avenir-Next";
@@ -31,7 +32,7 @@
   font-weight: 400;
   color: #323232;
   line-height: 1.23rem;
-  color: #fff;
+  color: #FFFFFF;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -63,12 +64,12 @@
   padding: 0.69rem;
 }
 .navbar__link:hover {
-  color: #fff;
-  border-bottom: 3px solid white;
+  color: #FFFFFF;
+  border-bottom: 3px solid #FFFFFF;
 }
 .navbar__link-current-page {
-  color: #fff;
-  border-bottom: 3px solid white;
+  color: #FFFFFF;
+  border-bottom: 3px solid #FFFFFF;
 }
 
 * {
@@ -79,6 +80,11 @@
 section {
   /*Mobile site padding*/
   padding: 1rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 div {
@@ -105,7 +111,7 @@ div {
   /*Adds 8 to the already 16 padding to have 24 padding for section headers*/
   padding-top: 0.5rem;
   padding-bottom: 1rem;
-  color: #fff;
+  color: #FFFFFF;
 }
 .footer__icons {
   width: 2rem;
@@ -118,7 +124,7 @@ div {
   line-height: 1.12rem;
   font-weight: 400;
   color: #323232;
-  color: #fff;
+  color: #FFFFFF;
 }
 .footer__poc-name-company-container {
   font-weight: 600;
@@ -140,7 +146,7 @@ div {
   font-size: 1.5rem;
   font-weight: 400;
   color: #323232;
-  color: #fff;
+  color: #FFFFFF;
 }
 .footer__copyright-text {
   font-family: "Avenir-Next";
@@ -149,18 +155,18 @@ div {
   line-height: 1.12rem;
   font-weight: 400;
   color: #323232;
-  color: #fff;
+  color: #FFFFFF;
   font-size: 0.7rem;
 }
 
 .hero {
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: start;
   width: 100vw;
-  height: 15rem;
   background-image: url("../assets/Images/hero-bio.jpg");
-  background-repeat: none;
+  background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -173,13 +179,17 @@ div {
   /*Adds 8 to the already 16 padding to have 24 padding for section headers*/
   padding-top: 0.5rem;
   padding-bottom: 1rem;
-  color: #fff;
+  color: white;
   z-index: 1;
   position: relative;
+  left: 1rem;
+  margin: 5rem 0rem;
 }
 .hero__overlay {
   background-color: #323232;
   opacity: 50%;
+  height: 100%;
+  width: 100%;
   position: absolute;
 }
 
@@ -230,7 +240,7 @@ div {
   line-height: 1.12rem;
   font-weight: 400;
   color: #323232;
-  color: black;
+  color: #000000;
 }
 
 .photo-gallery__photo {
