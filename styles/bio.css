@@ -76,11 +76,6 @@
   margin: 0px;
 }
 
-body {
-  /*The padding and everything below for now is only for mobile sites!*/
-  min-width: 320px;
-}
-
 section {
   /*Mobile site padding*/
   padding: 1rem;
@@ -163,10 +158,11 @@ div {
   align-items: center;
   justify-content: start;
   width: 100vw;
+  height: 15rem;
   background-image: url("../assets/Images/hero-bio.jpg");
   background-repeat: none;
   background-size: cover;
-  height: 65vh;
+  position: relative;
 }
 .hero__header {
   font-family: "Avenir-Next";
@@ -179,6 +175,12 @@ div {
   padding-bottom: 1rem;
   color: #fff;
   z-index: 1;
+  position: relative;
+}
+.hero__overlay {
+  background-color: #323232;
+  opacity: 50%;
+  position: absolute;
 }
 
 .about {
