@@ -1,3 +1,5 @@
+@use "./mixins" as *;
+
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -6,6 +8,10 @@
 section {
     /*Mobile site padding*/
     padding: 1rem;
+
+    @include tablet {
+        padding: 5rem;
+    }
 
 }
 

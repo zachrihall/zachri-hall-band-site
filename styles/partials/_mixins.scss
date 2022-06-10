@@ -1,5 +1,11 @@
 @use "./fonts" as *;
 
+@mixin tablet() {
+    @media (min-width: 769px) {
+        @content;
+    }
+}
+
 @mixin mobile-page-header {
     font-family: 'Avenir-Next';
     font-style: normal;
@@ -17,6 +23,10 @@
     /*Adds 8 to the already 16 padding to have 24 padding for section headers*/
     padding-top: 0.5rem;
     padding-bottom: 1rem;
+    
+    // @include tablet(){
+    //     color: blue;
+    // }
 }
 
 @mixin mobile-sub-header {
@@ -34,6 +44,6 @@
     font-size: 0.8rem;
     line-height: 1.12rem;
     font-weight: 400;
-    color: #323232
+    color: #323232;
 }
 

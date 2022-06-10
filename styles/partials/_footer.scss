@@ -16,6 +16,10 @@
     &__section-header {
         @include mobile-section-header;
         color: $white;
+
+        @include tablet {
+            font-size: 3rem;
+        }
     }
 
     &__icons {
@@ -26,6 +30,10 @@
     &__poc {
         @include mobile-body-copy;
         color: $white;
+
+        @include tablet {
+            font-size: 1.4rem;
+        }
 
         &-name-company-container {
             font-weight: 600;
@@ -52,6 +60,10 @@
             @include mobile-body-copy;
             color: $white;
             font-size: 0.7rem;
+
+            @include tablet {
+                font-size: 1.4rem;
+            }
         }
     }
 }

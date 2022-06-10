@@ -10,23 +10,42 @@
     padding: 0rem;
     padding-top: 1rem;
 
+    @include tablet {
+        flex-direction: row;
+        gap: 3rem 0rem;
+    }
+
     &__title {
         @include mobile-page-header;
         line-height: 1.23rem;
         color: $white;
         height: fit-content;
+
+        @include tablet {
+            padding: 2.5rem;
+            font-size: 2.75rem;
+            margin-right: 5rem;
+        }
     }
 
     &__links-list {
         display: flex;
         width: 100%;
         padding-inline-start: 0px;
+
+        @include tablet{
+            gap: 4rem;
+        }
     }
 
     &__link-wrapper {
         display: flex;
         justify-content: center;
         width: 50%;
+
+        @include tablet {
+            width: fit-content;
+        }
     }
 
 
@@ -39,6 +58,11 @@
         display: flex;
         justify-content: center;
         padding: 0.69rem;
+
+        @include tablet {
+            font-size: 1.6rem;
+            padding: 1.69rem 0rem;
+        }
 
         &:hover {
             color: $white;

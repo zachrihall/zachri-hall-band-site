@@ -13,7 +13,7 @@
     background-image: url("../assets/Images/hero-bio.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    
+
     position: relative;
 
     &__header {
@@ -23,9 +23,15 @@
         position: relative;
         left: 1rem;
         margin: 5rem 0rem;
+
+        @include tablet {
+            margin: 22rem 0rem;
+            font-size: 6rem;
+            left: 5rem;
+        }
     }
 
-    &__overlay{
+    &__overlay {
         background-color: #323232;
         opacity: 50%;
         height: 100%;
@@ -38,9 +44,18 @@
     display: flex;
     flex-direction: column;
 
+    @include tablet {
+        gap: 2rem;
+    }
+
     &__header {
         @include mobile-section-header;
         padding-top: 0.5rem;
+
+        @include tablet {
+            font-size: 4rem;
+        }
+
     }
 
     &__image {
@@ -49,11 +64,32 @@
         &-container {
             gap: 0.5rem 0rem;
 
+            @include tablet {
+                padding: 0rem 6rem;
+            }
+
             &-quote {
                 @include mobile-body-copy;
                 font-weight: 600;
                 letter-spacing: 1px;
                 line-height: 1.5rem;
+
+                @include tablet {
+                    font-size: 2rem;
+                    line-height: 3rem;
+
+                    &-teddy-bryan {
+                        @include tablet {
+                            @include mobile-body-copy;
+                            font-size: 1.55rem;
+                            font-weight: 600;
+                        }
+
+
+                    }
+                }
+
+
 
             }
         }
@@ -62,29 +98,74 @@
 
     &__description {
 
+        @include tablet {
+            padding: 0rem 5rem;
+        }
+
+        &-text-container {
+            @include tablet {
+                display: flex;
+                flex-direction: row;
+                font-size: 2rem;
+                gap: 1rem;
+            }
+        }
+
         &-text {
             @include mobile-body-copy;
+
+            @include tablet {
+                font-size: 1.4rem;
+                line-height: 2rem;
+            }
+
+
         }
 
         &-subheader {
             @include mobile-body-copy;
             color: $dark-black;
 
+            @include tablet {
+                font-size: 2.3rem;
+                font-weight: 600;
+            }
+
         }
     }
 }
 
 .photo-gallery {
+
     &__photo {
         width: 100%;
+
+        @include tablet {
+            width: 33%;
+            gap: 0rem;
+            padding: 1rem;
+        }
 
     }
 
     &__photos-container {
         gap: 1rem 0rem;
+
+        @include tablet {
+            gap: 0rem;
+            width: 100%;
+            flex-wrap: wrap;
+            display: flex;
+            flex-direction: row;
+
+        }
     }
 
     &__section-heading {
         @include mobile-section-header;
+
+        @include tablet {
+            font-size: 3rem;
+        }
     }
 }
