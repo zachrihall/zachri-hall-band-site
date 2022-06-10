@@ -66,6 +66,7 @@
 
             @include tablet {
                 padding: 0rem 6rem;
+                gap: 2rem;
             }
 
             &-quote {
@@ -79,6 +80,7 @@
                     line-height: 3rem;
 
                     &-teddy-bryan {
+
                         @include tablet {
                             @include mobile-body-copy;
                             font-size: 1.55rem;
@@ -129,6 +131,7 @@
             @include tablet {
                 font-size: 2.3rem;
                 font-weight: 600;
+                padding: 2rem 0rem;
             }
 
         }
@@ -136,6 +139,7 @@
 }
 
 .photo-gallery {
+    background-color: $alabaster;
 
     &__photo {
         width: 100%;
@@ -166,6 +170,7 @@
 
         @include tablet {
             font-size: 3rem;
+            padding-left: 1rem;
         }
     }
 }
