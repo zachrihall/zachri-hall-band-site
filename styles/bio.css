@@ -343,14 +343,19 @@ div {
     line-height: 3rem;
   }
 }
-@media (min-width: 769px) and (min-width: 769px) {
+.about__image-container-quote-teddy-bryan {
+  font-family: "Avenir-Next";
+  font-style: normal;
+  font-size: 0.8rem;
+  line-height: 1.12rem;
+  font-weight: 400;
+  color: #323232;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1.5rem;
+}
+@media (min-width: 769px) {
   .about__image-container-quote-teddy-bryan {
-    font-family: "Avenir-Next";
-    font-style: normal;
-    font-size: 0.8rem;
-    line-height: 1.12rem;
-    font-weight: 400;
-    color: #323232;
     font-size: 1.55rem;
     font-weight: 600;
   }
