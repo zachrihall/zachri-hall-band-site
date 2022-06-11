@@ -13,6 +13,10 @@ section {
         padding: 3rem;
     }
 
+    @include desktop {
+        padding: 3rem 8rem;
+    }
+
 }
 
 body {

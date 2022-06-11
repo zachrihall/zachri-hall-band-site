@@ -29,6 +29,10 @@
             font-size: 6rem;
             left: 5rem;
         }
+
+        @include desktop {
+            left: 8rem;
+        }
     }
 
     &__overlay {
@@ -79,19 +83,21 @@
                     font-size: 2rem;
                     line-height: 3rem;
                 }
-            }
 
-            &-quote-teddy-bryan {
-                @include mobile-body-copy;
-                font-weight: 600;
-                letter-spacing: 1px;
-                line-height: 1.5rem;
-
-                @include tablet {
-                    font-size: 1.55rem;
+                &--teddy-bryan {
+                    @include mobile-body-copy;
                     font-weight: 600;
+                    letter-spacing: 1px;
+                    line-height: 1.5rem;
+    
+                    @include tablet {
+                        font-size: 1.55rem;
+                        font-weight: 600;
+                    }
                 }
             }
+
+            
 
 
 

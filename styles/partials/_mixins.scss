@@ -6,6 +6,12 @@
     }
 }
 
+@mixin desktop(){
+    @media (min-width: 1279px){
+        @content;
+    }
+}
+
 @mixin mobile-page-header {
     font-family: 'Avenir-Next';
     font-style: normal;

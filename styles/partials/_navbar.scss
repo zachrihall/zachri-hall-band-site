@@ -15,6 +15,10 @@
         gap: 3rem 0rem;
     }
 
+    @include desktop {
+        padding-left: 5.5rem;
+    }
+
     &__title {
         @include mobile-page-header;
         line-height: 1.23rem;

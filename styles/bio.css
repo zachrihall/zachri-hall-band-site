@@ -31,6 +31,11 @@
     gap: 3rem 0rem;
   }
 }
+@media (min-width: 1279px) {
+  .navbar {
+    padding-left: 5.5rem;
+  }
+}
 .navbar__title {
   font-family: "Avenir-Next";
   font-style: normal;
@@ -117,6 +122,11 @@ section {
     padding: 3rem;
   }
 }
+@media (min-width: 1279px) {
+  section {
+    padding: 3rem 8rem;
+  }
+}
 
 body {
   display: flex;
@@ -137,7 +147,7 @@ div {
   }
 }
 @media (min-width: 769px) {
-  .footer__section-header-icons {
+  .footer__header-icons {
     flex-direction: row;
     align-items: center;
     gap: 3rem;
@@ -155,6 +165,11 @@ div {
     gap: 2rem;
   }
 }
+@media (min-width: 1279px) {
+  .footer__points-of-contact {
+    justify-content: start;
+  }
+}
 .footer__poc {
   gap: 1rem 0rem;
 }
@@ -164,7 +179,7 @@ div {
     flex-shrink: 0;
   }
 }
-.footer__section-header {
+.footer__header {
   font-family: "Avenir-Next";
   font-style: normal;
   font-size: 1.5rem;
@@ -176,7 +191,7 @@ div {
   color: #FFFFFF;
 }
 @media (min-width: 769px) {
-  .footer__section-header {
+  .footer__header {
     font-size: 3rem;
   }
 }
@@ -281,6 +296,11 @@ div {
     left: 5rem;
   }
 }
+@media (min-width: 1279px) {
+  .hero__header {
+    left: 8rem;
+  }
+}
 .hero__overlay {
   background-color: #323232;
   opacity: 50%;
@@ -343,7 +363,7 @@ div {
     line-height: 3rem;
   }
 }
-.about__image-container-quote-teddy-bryan {
+.about__image-container-quote--teddy-bryan {
   font-family: "Avenir-Next";
   font-style: normal;
   font-size: 0.8rem;
@@ -355,7 +375,7 @@ div {
   line-height: 1.5rem;
 }
 @media (min-width: 769px) {
-  .about__image-container-quote-teddy-bryan {
+  .about__image-container-quote--teddy-bryan {
     font-size: 1.55rem;
     font-weight: 600;
   }

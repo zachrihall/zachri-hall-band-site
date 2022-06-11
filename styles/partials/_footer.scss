@@ -8,7 +8,7 @@
         position: relative;
     }
 
-    &__section-header-icons {
+    &__header-icons {
         @include tablet {
             flex-direction: row;
             align-items: center;
@@ -26,6 +26,10 @@
             justify-content: space-between;
             gap: 2rem;
         }
+
+        @include desktop{
+            justify-content: start;
+        }
     }
 
     &__poc {
@@ -37,7 +41,7 @@
         }
     }
 
-    &__section-header {
+    &__header {
         @include mobile-section-header;
         color: $white;
 
