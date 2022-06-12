@@ -89,7 +89,7 @@
                     font-weight: 600;
                     letter-spacing: 1px;
                     line-height: 1.5rem;
-    
+
                     @include tablet {
                         font-size: 1.55rem;
                         font-weight: 600;
@@ -97,7 +97,7 @@
                 }
             }
 
-            
+
 
 
 
@@ -149,8 +149,19 @@
 .photo-gallery {
     background-color: $alabaster;
 
+    @include desktop {
+        padding-left: 7rem;
+    }
+
     &__photo {
         width: 100%;
+        filter: grayscale(100%);
+
+
+        &:hover {
+            filter: grayscale(0%);
+            transition-duration: 1s;
+        }
 
         @include tablet {
             width: 33%;
@@ -180,5 +191,6 @@
             font-size: 3rem;
             padding-left: 1rem;
         }
+
     }
 }
