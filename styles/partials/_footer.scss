@@ -95,7 +95,10 @@
                 top: 60px;
                 right: 48px;
                 font-size: 2rem;
+            }
 
+            @include desktop {
+                right: 147px;
             }
         }
 

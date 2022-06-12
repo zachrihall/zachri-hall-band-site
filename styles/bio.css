@@ -1,18 +1,18 @@
 @font-face {
   font-family: "Avenir-Next";
-  src: url(../assets/Font/AvenirNextLTPro-Regular.otf) format("opentype"), url(../assets/Font/alternative/AvenirNextLTPro.ttf) format("truetype");
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../assets/fonts/alternative/AvenirNextLTPro.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir-Next";
-  src: url(../assets/Font/AvenirNextLTPro-Bold.otf) format("opentype"), url(../assets/Font/alternative/AvenirNextLTProBold.ttf) format("truetype");
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../assets/fonts/alternative/AvenirNextLTProBold.ttf) format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Avenir-Next";
-  src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format("opentype"), url(../assets/Font/alternative/AvenirNextLTProDemi.ttf) format("truetype");
+  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../assets/fonts/alternative/AvenirNextLTProDemi.ttf) format("truetype");
   font-weight: 600;
   font-style: normal;
 }
@@ -54,6 +54,9 @@
     font-size: 2.75rem;
     margin-right: 5rem;
   }
+}
+.navbar__title-link {
+  text-decoration: none;
 }
 .navbar__links-list {
   display: flex;
@@ -247,6 +250,11 @@ div {
     font-size: 2rem;
   }
 }
+@media (min-width: 1279px) {
+  .footer__copyright-title {
+    right: 147px;
+  }
+}
 .footer__copyright-text {
   font-family: "Avenir-Next";
   font-style: normal;
@@ -269,7 +277,7 @@ div {
   align-items: center;
   justify-content: start;
   width: 100vw;
-  background-image: url("../assets/Images/hero-bio.jpg");
+  background-image: url("../assets/images/hero-bio.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
