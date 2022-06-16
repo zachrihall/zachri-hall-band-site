@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,25 +8,56 @@
     <title>Document</title>
     <link rel="stylesheet" href="../styles/shows.css" />
 </head>
+
 <body>
     <header>
         <section class="navbar">
-            <a class="navbar__title-link" href="./index.html">
+            <a class="navbar__title-link" href="../index.html">
                 <h1 class="navbar__title">BANDSITE</h1>
             </a>
             <ul class="navbar__links-list">
-                <li class="navbar__link-wrapper"><a class="navbar__link navbar__link-current-page" href="./index.html">Biography</a></li>
-                <li class="navbar__link-wrapper"><a class="navbar__link">Shows</a></li>
+                <li class="navbar__link-wrapper"><a class="navbar__link" href="../index.html">Biography</a></li>
+                <li class="navbar__link-wrapper"><a class="navbar__link navbar__link-current-page">Shows</a></li>
             </ul>
         </section>
     </header>
 
     <!--Hero section below-->
+    <section class="hero">
+        <div class="hero__overlay"></div>
+
+        <h2 class="hero__sub-header">Beautiful Beasts Album</h2>
+        <h1 class="hero__header">Queen of Yellow x<br> For The Stings</h1>
+
+        <!--Box and title relative overlay absolute-->
+    </section>
 
 
 
 
-    <!--Tickets section below-->
+    <!--Tickets section below - in JS :)-->
+    <section class="shows-container">
+        <h1 class="shows-container__title">Shows</h1>
+        <ul class="shows-container__shows-list">
+            <div class="shows-container__show-container">
+                <ul class="shows-container__show-list">
+                    <p class="shows-container__show-title">DATE</p>
+                    <!-- Needs modifier bold for date -->
+                    <p class="shows-container__show-info shows-container__show-info--bold">Mon Sept 06 2021</p>
+
+                    <p class="shows-container__show-title">VENUE</p>
+                    <p class="shows-container__show-info">Ronald Lane</p>
+
+                    <p class="shows-container__show-title">LOCATION</p>
+                    <p class="shows-container__show-info">San Francisco, CA</p>
+
+                    <button class="shows-container__show-btn">Buy Tickets</button>
+                </ul>
+                
+            </div>
+        </ul>
+
+    </section>
 
 
 
@@ -94,6 +126,8 @@
 
         </footer>
     </section>
-    
+
+    <script rel="script" src="../scripts/build-shows-page.js"></script>
 </body>
+
 </html>

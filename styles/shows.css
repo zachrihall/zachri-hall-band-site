@@ -272,4 +272,120 @@ div {
   .footer__copyright-text {
     font-size: 1rem;
   }
+}
+
+.hero {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 100vw;
+  background-image: url("../assets/images/hero-shows.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero__header {
+  font-family: "Avenir-Next";
+  font-style: normal;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #323232;
+  /*Adds 8 to the already 16 padding to have 24 padding for section headers*/
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  color: white;
+  position: relative;
+  left: 1rem;
+}
+@media (min-width: 769px) {
+  .hero__header {
+    margin: 22rem 0rem;
+    font-size: 6rem;
+    left: 5rem;
+  }
+}
+@media (min-width: 1279px) {
+  .hero__header {
+    left: 8rem;
+  }
+}
+.hero__sub-header {
+  font-family: "Avenir-Next";
+  font-style: normal;
+  font-size: 1.14rem;
+  font-weight: 400;
+  color: #323232;
+  padding-bottom: 1rem;
+  position: relative;
+  color: #fff;
+  left: 1rem;
+}
+.hero__overlay {
+  background-color: #323232;
+  opacity: 50%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.shows-container {
+  display: flex;
+  flex-direction: column;
+}
+.shows-container__shows-list {
+  padding: 0rem;
+  list-style-type: none;
+}
+.shows-container__title {
+  font-family: "Avenir-Next";
+  font-style: normal;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #323232;
+  /*Adds 8 to the already 16 padding to have 24 padding for section headers*/
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+}
+.shows-container__show-btn {
+  font-family: "Avenir-Next";
+  font-style: normal;
+  font-size: 1.14rem;
+  font-weight: 400;
+  color: #323232;
+  padding-bottom: 1rem;
+  background-color: #323232;
+  color: #fff;
+  border-radius: 5px;
+  width: 80%;
+}
+.shows-container__show-list {
+  padding: 0rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.shows-container__show-title {
+  font-family: "Avenir-Next";
+  font-style: normal;
+  font-size: 0.8rem;
+  line-height: 1.12rem;
+  font-weight: 400;
+  color: #323232;
+  color: #AFAFAF;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.shows-container__show-info {
+  font-family: "Avenir-Next";
+  font-style: normal;
+  font-size: 0.8rem;
+  line-height: 1.12rem;
+  font-weight: 400;
+  color: #323232;
+  font-size: 1.2rem;
+}
+.shows-container__show-info--bold {
+  font-weight: 600;
 }/*# sourceMappingURL=shows.css.map */

@@ -4,3 +4,101 @@
 @use "../styles/partials/variables" as *;
 @use "../styles/partials/footer" as *;
 
+.hero {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100vw;
+    background-image: url("../assets/images/hero-shows.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+
+    &__header {
+        @include mobile-section-header;
+        color: white;
+        position: relative;
+        left: 1rem;
+        // margin: 5rem 0rem;
+
+        @include tablet {
+            margin: 22rem 0rem;
+            font-size: 6rem;
+            left: 5rem;
+        }
+
+        @include desktop {
+            left: 8rem;
+        }
+    }
+
+    &__sub-header {
+        @include mobile-sub-header;
+        position: relative;
+        color: #fff;
+        left: 1rem;
+    }
+
+    &__overlay {
+        background-color: #323232;
+        opacity: 50%;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+}
+
+.shows-container {
+    display: flex;
+    flex-direction: column;
+
+    &__shows-list {
+        padding: 0rem;
+        list-style-type: none;
+
+    }
+
+    &__title {
+        @include mobile-section-header;
+        padding-top: 0.5rem;
+    }
+
+    &__show {
+
+        &-btn{
+            @include mobile-sub-header;
+            background-color: #323232;
+            color: #fff;
+            border-radius: 5px;
+            width: 80%;
+            
+        }
+
+        &-list{
+            padding: 0rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        &-title {
+            @include mobile-body-copy;
+            color: $silver;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+
+
+        &-info {
+            @include mobile-body-copy;
+            font-size: 1.2rem;
+
+            &--bold {
+                font-weight: 600;
+            }
+
+        }
+    }
+}
