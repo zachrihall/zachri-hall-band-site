@@ -225,6 +225,7 @@
             flex-direction: column;
             width: 100%;
             gap: 1.5rem;
+            padding-bottom: 1rem;
         }
 
         &-label {
@@ -258,9 +259,12 @@
 
     &__comments {
         &-comment{
+            @include mobile-body-copy;
             display: flex;
             flex-direction: row;
+            font-size: 1rem;
             gap: 1rem;
+            padding: 1rem 0rem 0.5rem 0rem;
         }
         &-container {
             display: flex;
@@ -268,10 +272,22 @@
             justify-content: space-between;
             padding-bottom: 0.5rem;
             &-user-picture {
-                background-color: #323232;
+                background-color: #dddddd;
                 border-radius: 50%;
                 height: 36px;
                 width: 36px;
+            }
+
+            &-user-name {
+                @include mobile-sub-header;
+                padding: 0px;
+                font-weight: 600;
+            }
+
+            &-when{
+                @include mobile-sub-header;
+                padding: 0px;
+                color: $silver;
             }
         }
     }
