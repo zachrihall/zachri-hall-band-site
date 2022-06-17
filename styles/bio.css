@@ -497,7 +497,109 @@ div {
   padding-top: 0.5rem;
   padding-bottom: 1rem;
 }
+.reviews__write-comment {
+  flex-direction: row;
+  justify-content: start;
+  gap: 1rem;
+  /* -- SUBMIT BUTTON -- */
+}
+.reviews__write-comment-input-container {
+  gap: 0.25rem;
+}
+.reviews__write-comment-container {
+  gap: 1rem;
+  width: 100%;
+}
+.reviews__write-comment-user-picture {
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
 .reviews__write-comment-form {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  gap: 1.5rem;
+}
+.reviews__write-comment-label {
+  font-family: "Avenir-Next";
+  font-style: normal;
+  font-size: 0.8rem;
+  line-height: 1.12rem;
+  font-weight: 400;
+  color: #323232;
+  color: #AFAFAF;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-left: 4px;
+}
+.reviews__write-comment-submit {
+  font-family: "Avenir-Next";
+  font-style: normal;
+  font-size: 1.14rem;
+  font-weight: 400;
+  color: #323232;
+  padding-bottom: 1rem;
+  background-color: #323232;
+  color: #fff;
+  border-radius: 5px;
+  width: 80%;
+  padding: 0.5rem;
+  font-weight: 600;
+  border: none;
+}
+.reviews__write-comment-name-input {
+  background-color: #FAFAFA;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px;
+  min-height: 36px;
+  width: 100%;
+  padding: 12px;
+  margin: 4px;
+  outline: none;
+  font-family: "Avenir-Next";
+  font-style: normal;
+  font-size: 0.8rem;
+  line-height: 1.12rem;
+  font-weight: 400;
+  color: #323232;
+}
+.reviews__write-comment-name-input:focus {
+  border: 1px solid #323232;
+}
+.reviews__write-comment-textarea {
+  background-color: #FAFAFA;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px;
+  min-height: 36px;
+  width: 100%;
+  padding: 12px;
+  margin: 4px;
+  outline: none;
+  font-family: "Avenir-Next";
+  font-style: normal;
+  font-size: 0.8rem;
+  line-height: 1.12rem;
+  font-weight: 400;
+  color: #323232;
+}
+.reviews__write-comment-textarea:focus {
+  border: 1px solid #323232;
+}
+.reviews__comments-comment {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.reviews__comments-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+}
+.reviews__comments-container-user-picture {
+  background-color: #323232;
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
 }/*# sourceMappingURL=bio.css.map */

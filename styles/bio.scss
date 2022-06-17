@@ -200,13 +200,80 @@
         @include mobile-section-header;
     }
 
-    &__write-comment{
-
-        &-form{
-            display: flex;
-            flex-direction: column;
+    &__write-comment {
+        flex-direction: row;
+        justify-content: start;
+        gap: 1rem;
+    
+        &-input-container{
+            gap: 0.25rem;
         }
 
+        &-container {
+            gap: 1rem;
+            width: 100%;
+        }
+
+        &-user-picture {
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        &-form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 1.5rem;
+        }
+
+        &-label {
+            @include mobile-body-copy;
+            color: $silver;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-left: 4px;
+        }
+
+        /* -- SUBMIT BUTTON -- */
+        &-submit {
+            @include mobile-sub-header;
+            background-color: #323232;
+            color: #fff;
+            border-radius: 5px;
+            width: 80%;
+            padding: 0.5rem;
+            font-weight: 600;
+            border: none;
+        }
+
+        &-name-input {
+            @include form-field;
+        }
+
+        &-textarea {
+            @include form-field;
+        }
+    }
+
+    &__comments {
+        &-comment{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+        &-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-bottom: 0.5rem;
+            &-user-picture {
+                background-color: #323232;
+                border-radius: 50%;
+                height: 36px;
+                width: 36px;
+            }
+        }
     }
 
 }
