@@ -194,3 +194,19 @@
 
     }
 }
+
+.reviews {
+    &__title {
+        @include mobile-section-header;
+    }
+
+    &__write-comment{
+
+        &-form{
+            display: flex;
+            flex-direction: column;
+        }
+
+    }
+
+}

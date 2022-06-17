@@ -67,12 +67,12 @@
 
     &__show {
 
-        &-div{
+        &-div {
             gap: 1rem;
 
         }
 
-        &-btn{
+        &-btn {
             @include mobile-sub-header;
             background-color: #323232;
             color: #fff;
@@ -80,15 +80,16 @@
             width: 80%;
             padding: 0.5rem;
             font-weight: 600;
-            
+
         }
 
-        &-list{
+        &-list {
             padding: 0rem;
             display: flex;
             flex-direction: column;
             gap: 1.75rem;
         }
+
         &-title {
             @include mobile-body-copy;
             color: $silver;

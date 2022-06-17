@@ -485,4 +485,19 @@ div {
     font-size: 3rem;
     padding-left: 1rem;
   }
+}
+
+.reviews__title {
+  font-family: "Avenir-Next";
+  font-style: normal;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #323232;
+  /*Adds 8 to the already 16 padding to have 24 padding for section headers*/
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+.reviews__write-comment-form {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=bio.css.map */
