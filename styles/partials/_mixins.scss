@@ -1,6 +1,11 @@
 @use "./fonts" as *;
 @use "./variables" as *;
 
+@mixin mobile {
+    @media (min-width: 320px) {
+        @content;
+    }
+}
 @mixin tablet() {
     @media (min-width: 769px) {
         @content;

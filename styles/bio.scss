@@ -200,10 +200,21 @@
         @include mobile-section-header;
     }
 
+    &__content {
+        @include tablet {
+            padding: 0rem 6rem;
+        }
+
+        @include desktop {
+            padding: 0rem 16rem;
+        }
+    }
+
     &__write-comment {
         flex-direction: row;
         justify-content: start;
         gap: 1rem;
+        padding-top: 1rem;
     
         &-input-container{
             gap: 0.25rem;
@@ -242,10 +253,16 @@
             background-color: #323232;
             color: #fff;
             border-radius: 5px;
-            width: 80%;
+            width: 100%;
             padding: 0.5rem;
             font-weight: 600;
             border: none;
+
+            @include tablet {
+                align-self: end;
+                width: fit-content;
+                padding: 1rem 2rem;
+            }
         }
 
         &-name-input {
@@ -264,7 +281,7 @@
             flex-direction: row;
             font-size: 1rem;
             gap: 1rem;
-            padding: 1rem 0rem 0.5rem 0rem;
+            padding: 1.25rem 0rem;
         }
         &-container {
             display: flex;

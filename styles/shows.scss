@@ -54,18 +54,54 @@
     display: flex;
     flex-direction: column;
 
+    @include desktop {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     &__shows-list {
         padding: 0rem;
         list-style-type: none;
+    }
 
+    &__tablet-desktop-list {
+        display: flex;
+        flex-direction: row;
+        gap: 4rem;
+        padding: 0rem;
+
+        &-item {
+            display: none;
+
+            @include tablet {
+                display: flex;
+            }
+
+            ;
+
+            @include mobile-body-copy;
+            color: $silver;
+            font-weight: 600;
+            font-size: 1rem;
+            list-style-type: none;
+        }
     }
 
     &__title {
         @include mobile-section-header;
         padding: 1.5rem 0rem;
+
+        @include desktop {
+            padding: 0rem;
+        }
     }
 
     &__show {
+        position: relative;
+
+        &-break{
+            margin-top: 2rem;
+        }
 
         &-div {
             gap: 1rem;
@@ -77,9 +113,17 @@
             background-color: #323232;
             color: #fff;
             border-radius: 5px;
-            width: 80%;
+            width: 100%;
             padding: 0.5rem;
             font-weight: 600;
+            align-self: center;
+
+            @include tablet {
+                width: fit-content;
+                padding: 1rem 2rem;
+                align-self: end;
+
+            }
 
         }
 
@@ -88,6 +132,16 @@
             display: flex;
             flex-direction: column;
             gap: 1.75rem;
+
+            @include tablet {
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            @include desktop {
+                gap: 4rem;
+            }
         }
 
         &-title {
@@ -95,6 +149,10 @@
             color: $silver;
             font-weight: 600;
             font-size: 1rem;
+
+            // @include tablet {
+            //     display: none;
+            // }
         }
 
 
@@ -105,6 +163,11 @@
 
             &--bold {
                 font-weight: 600;
+            }
+
+            @include tablet {
+                padding-top: 4rem;
+                padding-bottom: 1.25rem;
             }
 
         }

@@ -333,9 +333,39 @@ div {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 1279px) {
+  .shows-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 .shows-container__shows-list {
   padding: 0rem;
   list-style-type: none;
+}
+.shows-container__tablet-desktop-list {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  padding: 0rem;
+}
+.shows-container__tablet-desktop-list-item {
+  display: none;
+  font-family: "Avenir-Next";
+  font-style: normal;
+  font-size: 0.8rem;
+  line-height: 1.12rem;
+  font-weight: 400;
+  color: #323232;
+  color: #AFAFAF;
+  font-weight: 600;
+  font-size: 1rem;
+  list-style-type: none;
+}
+@media (min-width: 769px) {
+  .shows-container__tablet-desktop-list-item {
+    display: flex;
+  }
 }
 .shows-container__title {
   font-family: "Avenir-Next";
@@ -347,6 +377,17 @@ div {
   padding-top: 0.5rem;
   padding-bottom: 1rem;
   padding: 1.5rem 0rem;
+}
+@media (min-width: 1279px) {
+  .shows-container__title {
+    padding: 0rem;
+  }
+}
+.shows-container__show {
+  position: relative;
+}
+.shows-container__show-break {
+  margin-top: 2rem;
 }
 .shows-container__show-div {
   gap: 1rem;
@@ -361,15 +402,37 @@ div {
   background-color: #323232;
   color: #fff;
   border-radius: 5px;
-  width: 80%;
+  width: 100%;
   padding: 0.5rem;
   font-weight: 600;
+  align-self: center;
+}
+@media (min-width: 769px) {
+  .shows-container__show-btn {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 1rem 2rem;
+    align-self: end;
+  }
 }
 .shows-container__show-list {
   padding: 0rem;
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+}
+@media (min-width: 769px) {
+  .shows-container__show-list {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+@media (min-width: 1279px) {
+  .shows-container__show-list {
+    gap: 4rem;
+  }
 }
 .shows-container__show-title {
   font-family: "Avenir-Next";
@@ -393,4 +456,10 @@ div {
 }
 .shows-container__show-info--bold {
   font-weight: 600;
+}
+@media (min-width: 769px) {
+  .shows-container__show-info {
+    padding-top: 4rem;
+    padding-bottom: 1.25rem;
+  }
 }/*# sourceMappingURL=shows.css.map */
