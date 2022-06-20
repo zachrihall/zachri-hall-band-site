@@ -1,4 +1,4 @@
-let comments = [
+let commentsArray = [
     {
         'name': 'Connor Walton',
         'date': '02/17/2021',
@@ -26,17 +26,18 @@ const userName = document.querySelector(".reviews__write-comment-name-input");
 console.log(userName.innerHTML);
 
 const form = document.querySelector(".reviews__write-comment-form");
-const commentsContainer = document.querySelector(".reviews__comments");
+let commentsContainer = document.querySelector(".reviews__comments");
 
-let formName = new String;
-let formBody = new String;
+let emptyDiv = document.createElement("div");
+emptyDiv.classList.add("reviews__comments");
 
 
-function displayComment() {
+
+
+function createComment(commentObject) {
     //largest comment div
     const commentDiv = document.createElement("div");
     commentDiv.classList.add("reviews__comments-comment");
-
 
     //div for the picture which is seperate from the conten
     const commentPicDiv = document.createElement("div");
@@ -58,25 +59,17 @@ function displayComment() {
     const commentInfoContainer = document.createElement("div");
     commentInfoContainer.classList.add("reviews__comments-info-container");
 
-
-
     //div for the name and date of the comment
     const commentNameDateDiv = document.createElement("div");
     commentNameDateDiv.classList.add("reviews__comments-container");
     //append the date div to the content div
     commentInfoContainer.appendChild(commentNameDateDiv);
 
-
-
-
-
-
-
     //p for the name of the comment
     const commentName = document.createElement("p");
     commentName.classList.add("reviews__comments-container-user-name");
     // add the text grabbed from form !!!!
-    commentName.innerText = formName;
+    commentName.innerText = commentObject.name;
     //appending to parent div
     commentNameDateDiv.appendChild(commentName);
 
@@ -85,9 +78,9 @@ function displayComment() {
     const commentDate = document.createElement("p");
     commentDate.classList.add("reviews__comments-container-when");
     // data from from library for date below !!!!
-    let newDate = new Date;
-    let date = "0" + newDate.toLocaleDateString();
-    commentDate.innerText = date;
+
+    // ----- FILL IN ------
+    commentDate.innerText = commentObject.date;
 
     //appending to parent div
     commentNameDateDiv.appendChild(commentDate);
@@ -97,7 +90,7 @@ function displayComment() {
     commentText.classList.add("reviews__comments-comment");
 
     //comment text from the form
-    commentText.innerText = formBody;
+    commentText.innerText = commentObject.comment;
 
     //appending to parent div
     commentInfoContainer.appendChild(commentText);
@@ -109,22 +102,49 @@ function displayComment() {
     commentsContainer.appendChild(commentDiv);
     commentsContainer.appendChild(horizontalBreak);
 
-    console.log(commentDiv);
+    // console.log(commentDiv);
 
 }
 
-
+for (let i = 0; i < commentsArray.length; i++) {
+    createComment(commentsArray[i]);
+   }
 
 
 form.addEventListener("submit", (e) => {
+    commentsContainer.innerHTML = "<div></div>";
     e.preventDefault();
+
+    let formName = new String;
+    let formBody = new String;
     formName = e.target.name.value;
     formBody = e.target.textarea.value;
+
+    e.target.name.value = "Enter your name";
+    e.target.textarea.value = "Add a new comment";
+
+
+
     console.log("Name: " + e.target.name.value);
     console.log("Comment: " + e.target.textarea.value);
 
+    let newDate = new Date;
+    let date = "0" + newDate.toLocaleDateString();
 
-    (displayComment());
+    const commentObject = {
+        'name': formName,
+        'date': date,
+        'comment': formBody
+    }
+    commentsArray.push(commentObject);
+
+    setTimeout(() => {for (let i = 0; i < commentsArray.length; i++) {
+        createComment(commentsArray[i]);
+       }},3000);
+   
+
+
+
 })
 
 // 2. Assign the variables to objects using the same structure 
