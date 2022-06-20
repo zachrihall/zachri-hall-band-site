@@ -24,7 +24,7 @@ let commentsArray = [
 // 1. create the variables using the DOM API
 const userName = document.querySelector(".reviews__write-comment-name-input");
 console.log(userName.innerHTML);
-
+ 
 const form = document.querySelector(".reviews__write-comment-form");
 let commentsContainer = document.querySelector(".reviews__comments");
 
@@ -119,12 +119,7 @@ form.addEventListener("submit", (e) => {
     let formBody = new String;
     formName = e.target.name.value;
     formBody = e.target.textarea.value;
-
-    e.target.name.value = "Enter your name";
-    e.target.textarea.value = "Add a new comment";
-
-
-
+    
     console.log("Name: " + e.target.name.value);
     console.log("Comment: " + e.target.textarea.value);
 
@@ -140,7 +135,7 @@ form.addEventListener("submit", (e) => {
 
     setTimeout(() => {for (let i = 0; i < commentsArray.length; i++) {
         createComment(commentsArray[i]);
-       }},3000);
+       }},0);
    
 
 

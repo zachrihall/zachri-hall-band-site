@@ -285,6 +285,52 @@ div {
   background-size: cover;
   position: relative;
 }
+@media (min-width: 1279px) {
+  .hero {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.hero__song {
+  position: relative;
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .hero__song {
+    width: 70%;
+  }
+}
+@media (min-width: 1279px) {
+  .hero__song {
+    width: 50%;
+    max-width: 600px;
+    align-self: center;
+  }
+}
+.hero__content-div {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  gap: 1rem;
+}
+@media (min-width: 769px) {
+  .hero__content-div {
+    width: 70%;
+    padding: 2rem 2rem;
+  }
+}
+@media (min-width: 1279px) {
+  .hero__content-div {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2rem 8rem;
+    margin: 15rem 0rem;
+  }
+}
 .hero__header {
   font-family: "Avenir-Next";
   font-style: normal;
@@ -294,20 +340,19 @@ div {
   /*Adds 8 to the already 16 padding to have 24 padding for section headers*/
   padding-top: 0.5rem;
   padding-bottom: 1rem;
+  font-size: 1.75rem;
   color: white;
   position: relative;
-  left: 1rem;
 }
 @media (min-width: 769px) {
   .hero__header {
-    margin: 22rem 0rem;
-    font-size: 6rem;
-    left: 5rem;
+    font-size: 4rem;
   }
 }
 @media (min-width: 1279px) {
   .hero__header {
-    left: 8rem;
+    width: 48%;
+    max-width: 600px;
   }
 }
 .hero__sub-header {
@@ -317,9 +362,19 @@ div {
   font-weight: 400;
   color: #323232;
   padding-bottom: 1rem;
+  padding: 0rem;
   position: relative;
   color: #fff;
-  left: 1rem;
+}
+@media (min-width: 769px) {
+  .hero__sub-header {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1279px) {
+  .hero__sub-header {
+    width: 100%;
+  }
 }
 .hero__overlay {
   background-color: #323232;
@@ -378,6 +433,11 @@ div {
   padding-bottom: 1rem;
   padding: 1.5rem 0rem;
 }
+@media (min-width: 769px) {
+  .shows-container__title {
+    font-size: 3rem;
+  }
+}
 @media (min-width: 1279px) {
   .shows-container__title {
     padding: 0rem;
@@ -385,9 +445,6 @@ div {
 }
 .shows-container__show {
   position: relative;
-}
-.shows-container__show-break {
-  margin-top: 2rem;
 }
 .shows-container__show-div {
   gap: 1rem;
@@ -422,16 +479,21 @@ div {
   flex-direction: column;
   gap: 1.75rem;
 }
+.shows-container__show-list:hover {
+  background-color: #FAFAFA;
+}
 @media (min-width: 769px) {
   .shows-container__show-list {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    padding-bottom: 4rem;
   }
 }
 @media (min-width: 1279px) {
   .shows-container__show-list {
     gap: 4rem;
+    padding-bottom: 4rem;
   }
 }
 .shows-container__show-title {
@@ -444,6 +506,16 @@ div {
   color: #AFAFAF;
   font-weight: 600;
   font-size: 1rem;
+}
+@media (min-width: 769px) {
+  .shows-container__show-title {
+    display: none;
+  }
+}
+@media (min-width: 1279px) {
+  .shows-container__show-title {
+    display: none;
+  }
 }
 .shows-container__show-info {
   font-family: "Avenir-Next";
@@ -462,4 +534,8 @@ div {
     padding-top: 4rem;
     padding-bottom: 1.25rem;
   }
+}
+
+.active-div {
+  background-color: #E1E1E1;
 }/*# sourceMappingURL=shows.css.map */
