@@ -4,6 +4,11 @@
 @use "../styles/partials/variables" as *;
 @use "../styles/partials/footer" as *;
 
+hr {
+    // Fill color mercury and 1px thick
+}
+
+
 .hero {
     padding: 0;
     display: flex;
@@ -271,6 +276,10 @@
 
         &-textarea {
             @include form-field;
+
+            &--error {
+                border: 1px solid red;
+            }
         }
     }
 
@@ -284,8 +293,6 @@
             font-size: 1rem;
             gap: 1rem;
             padding: 1.25rem 0rem;
-
-           
         }
 
         &-info-container {

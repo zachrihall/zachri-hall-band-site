@@ -607,6 +607,9 @@ div {
 .reviews__write-comment-textarea:focus {
   border: 1px solid #323232;
 }
+.reviews__write-comment-textarea--error {
+  border: 1px solid red;
+}
 .reviews__comments-comment {
   font-family: "Avenir-Next";
   font-style: normal;

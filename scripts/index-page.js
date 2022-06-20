@@ -24,7 +24,7 @@ let commentsArray = [
 // 1. create the variables using the DOM API
 const userName = document.querySelector(".reviews__write-comment-name-input");
 console.log(userName.innerHTML);
- 
+
 const form = document.querySelector(".reviews__write-comment-form");
 let commentsContainer = document.querySelector(".reviews__comments");
 
@@ -106,39 +106,49 @@ function createComment(commentObject) {
 
 }
 
+let firstBreak = document.createElement("hr");
+commentsContainer.appendChild(firstBreak);
+
+//populate default comments
 for (let i = 0; i < commentsArray.length; i++) {
     createComment(commentsArray[i]);
-   }
+}
 
 
 form.addEventListener("submit", (e) => {
-    commentsContainer.innerHTML = "<div></div>";
     e.preventDefault();
 
-    let formName = new String;
-    let formBody = new String;
-    formName = e.target.name.value;
-    formBody = e.target.textarea.value;
-    
-    console.log("Name: " + e.target.name.value);
-    console.log("Comment: " + e.target.textarea.value);
+    if (e.target.textarea.value === "") {
+        e.target.textarea.classList.add("reviews__write-comment-textarea--error");
+    } else {
+        e.target.textarea.classList.remove("reviews__write-comment-textarea--error");
+        let formName = new String;
+        let formBody = new String;
 
-    let newDate = new Date;
-    let date = "0" + newDate.toLocaleDateString();
+        formName = e.target.name.value;
+        formBody = e.target.textarea.value;
 
-    const commentObject = {
-        'name': formName,
-        'date': date,
-        'comment': formBody
+        e.target.textarea.value = "";
+        e.target.name.value = "";
+
+        console.log("Name: " + e.target.name.value);
+        console.log("Comment: " + e.target.textarea.value);
+
+        let newDate = new Date;
+        let date = "0" + newDate.toLocaleDateString();
+
+        const commentObject = {
+            'name': formName,
+            'date': date,
+            'comment': formBody
+        }
+        commentsArray.push(commentObject);
+
+        //populate added comments section
+        for (let i = 3; i < commentsArray.length; i++) {
+            createComment(commentsArray[i]);
+        }
     }
-    commentsArray.push(commentObject);
-
-    setTimeout(() => {for (let i = 0; i < commentsArray.length; i++) {
-        createComment(commentsArray[i]);
-       }},0);
-   
-
-
 
 })
 
