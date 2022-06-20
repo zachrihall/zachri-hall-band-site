@@ -25,9 +25,11 @@ let commentsArray = [
 const userName = document.querySelector(".reviews__write-comment-name-input");
 console.log(userName.innerHTML);
 
+//get the form
 const form = document.querySelector(".reviews__write-comment-form");
 let commentsContainer = document.querySelector(".reviews__comments");
 
+//empty div for clearing the page
 let emptyDiv = document.createElement("div");
 emptyDiv.classList.add("reviews__comments");
 
@@ -151,22 +153,3 @@ form.addEventListener("submit", (e) => {
     }
 
 })
-
-// 2. Assign the variables to objects using the same structure 
-
-// Create the comment structure
-
-
-
-
-
-
-
-
-
-
-
-
-// 3. Store the new comment object in an array
-
-// 4. have a function called displayComment() to loop through the objects in the array and display them

@@ -38,11 +38,10 @@ let showArray = [
 
 let showNodes = [];
 
-function createShow(showObject){
+function createShow(showObject) {
 
     //last to get appended to
-    const showsContainer = 
-    document.querySelector(".shows-container__show-container");
+    const showsContainer =  document.querySelector(".shows-container__show-container");
 
     const showList = document.createElement("ul");
     showList.classList.add("shows-container__show-list");
@@ -64,7 +63,7 @@ function createShow(showObject){
     date.classList.add("shows-container__show-info");
     date.classList.add("shows-container__show-info--bold");
 
-    
+
     dateContainer.appendChild(date);
 
     //venue section
@@ -72,7 +71,7 @@ function createShow(showObject){
     venueContainer.classList.add("shows-container__show-div--venue");
     showList.appendChild(venueContainer);
 
-    
+
     let venueTitle = document.createElement("p");
     venueTitle.innerText = "VENUE";
     venueTitle.classList.add("shows-container__show-title");
@@ -88,7 +87,7 @@ function createShow(showObject){
     locationContainer.classList.add("shows-container__show-div--location");
     showList.appendChild(locationContainer);
 
-    
+
     let locationTitle = document.createElement("p");
     locationTitle.innerText = "LOCATION"
     locationTitle.classList.add("shows-container__show-title");
@@ -109,26 +108,8 @@ function createShow(showObject){
     horizontalBreak.classList.add("shows-container__show-break");
     showsContainer.appendChild(horizontalBreak);
 
-    let check = 0;
-    showList.addEventListener("click", (e) => {
-        e.preventDefault();
-        
-        if(check === 0){
-            showList.classList.add("active-div");
-            check = 1;
-        }else{
-            showList.classList.remove("active-div");
-            check = 0;
-   
-        }
-
-    })
-
 }
 
 for (let i = 0; i < showArray.length; i++) {
     createShow(showArray[i]);
-    
 }
-
-
