@@ -188,6 +188,15 @@
                 background-color: $alabaster;
             }
 
+            &--selected {
+                background-color: $mercury;
+            }
+
+            &--selected:hover {
+                background-color: $mercury;
+            }
+
+
             @include tablet {
                 flex-direction: row;
                 justify-content: space-between;
@@ -233,8 +242,4 @@
 
         }
     }
-}
-
-.active-div {
-    background-color: $mercury;
 }

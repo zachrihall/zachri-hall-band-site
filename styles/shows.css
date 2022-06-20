@@ -482,6 +482,12 @@ div {
 .shows-container__show-list:hover {
   background-color: #FAFAFA;
 }
+.shows-container__show-list--selected {
+  background-color: #E1E1E1;
+}
+.shows-container__show-list--selected:hover {
+  background-color: #E1E1E1;
+}
 @media (min-width: 769px) {
   .shows-container__show-list {
     flex-direction: row;
@@ -534,8 +540,4 @@ div {
     padding-top: 4rem;
     padding-bottom: 1.25rem;
   }
-}
-
-.active-div {
-  background-color: #E1E1E1;
 }/*# sourceMappingURL=shows.css.map */

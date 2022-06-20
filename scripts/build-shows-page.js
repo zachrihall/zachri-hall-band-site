@@ -108,6 +108,15 @@ function createShow(showObject) {
     horizontalBreak.classList.add("shows-container__show-break");
     showsContainer.appendChild(horizontalBreak);
 
+    showList.addEventListener("click", (e) => {
+        let current = document.querySelector('.shows-container__show-list--selected');
+        if(current) {
+            current.classList.remove('shows-container__show-list--selected');
+        }
+        let el = e.target.closest('.shows-container__show-list');
+        el.classList.add('shows-container__show-list--selected');
+    })
+
 }
 
 for (let i = 0; i < showArray.length; i++) {
