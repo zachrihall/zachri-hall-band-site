@@ -215,8 +215,8 @@
         justify-content: start;
         gap: 1rem;
         padding-top: 1rem;
-    
-        &-input-container{
+
+        &-input-container {
             gap: 0.25rem;
         }
 
@@ -275,19 +275,29 @@
     }
 
     &__comments {
-        &-comment{
+        
+
+        &-comment {
             @include mobile-body-copy;
             display: flex;
             flex-direction: row;
             font-size: 1rem;
             gap: 1rem;
             padding: 1.25rem 0rem;
+
+           
         }
+
+        &-info-container {
+            width: 100%;
+        }
+
         &-container {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             padding-bottom: 0.5rem;
+
             &-user-picture {
                 background-color: #dddddd;
                 border-radius: 50%;
@@ -301,7 +311,7 @@
                 font-weight: 600;
             }
 
-            &-when{
+            &-when {
                 @include mobile-sub-header;
                 padding: 0px;
                 color: $silver;

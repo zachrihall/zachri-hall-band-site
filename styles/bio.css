@@ -620,6 +620,9 @@ div {
   gap: 1rem;
   padding: 1.25rem 0rem;
 }
+.reviews__comments-info-container {
+  width: 100%;
+}
 .reviews__comments-container {
   display: flex;
   flex-direction: row;
