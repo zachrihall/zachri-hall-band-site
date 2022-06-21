@@ -19,7 +19,11 @@ let commentsArray = [
 ];
 
 
-
+//first have to convert normal date to millisecond date
+function convertDateToMils(date) {
+    let d = new Date(date);
+    return d.getTime();
+}
 
 // 1. create the variables using the DOM API
 const userName = document.querySelector(".reviews__write-comment-name-input");
@@ -146,10 +150,17 @@ form.addEventListener("submit", (e) => {
         }
         commentsArray.push(commentObject);
 
+        //sorts the comments array to show the latest one first using the convertDateToMils Function
+        commentsArray.sort((a, b) => {
+            return convertDateToMils(b.date) - convertDateToMils(a.date);
+        })
+
         //populate added comments section
         for (let i = 0; i < commentsArray.length; i++) {
             createComment(commentsArray[i]);
         }
     }
-
 })
+
+
+
