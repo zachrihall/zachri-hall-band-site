@@ -1,22 +1,23 @@
-let commentsArray = [
-    {
-        'name': 'Connor Walton',
-        'date': '02/17/2021',
-        'comment': 'This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.'
-    },
+// let commentsArray = [
+//     {
+//         'name': 'Connor Walton',
+//         'date': '02/17/2021',
+//         'comment': 'This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.'
+//     },
 
-    {
-        'name': 'Emilie Beach',
-        'date': '01/09/2021',
-        'comment': 'I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.'
-    },
-    {
-        'name': 'Miles Acosta',
-        'date': '12/20/2020',
-        'comment': "I cant stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Cant get enough."
-    }
 
-];
+//     {
+//         'name': 'Emilie Beach',
+//         'date': '01/09/2021',
+//         'comment': 'I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.'
+//     },
+//     {
+//         'name': 'Miles Acosta',
+//         'date': '12/20/2020',
+//         'comment': "I cant stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Cant get enough."
+//     }
+
+// ];
 
 
 //first have to convert normal date to millisecond date
@@ -37,8 +38,7 @@ let commentsContainer = document.querySelector(".reviews__comments");
 let emptyDiv = document.createElement("div");
 emptyDiv.classList.add("reviews__comments");
 
-
-
+axios.get
 
 function createComment(commentObject) {
     //largest comment div
@@ -86,7 +86,7 @@ function createComment(commentObject) {
     // data from from library for date below !!!!
 
     // ----- FILL IN ------
-    commentDate.innerText = commentObject.date;
+    commentDate.innerText = commentObject.timestamp;
 
     //appending to parent div
     commentNameDateDiv.appendChild(commentDate);
@@ -112,48 +112,103 @@ function createComment(commentObject) {
 
 }
 
+
+
+let commentsArray = new Array;
+
+// //get comments request
+let req = axios.get("https://project-1-api.herokuapp.com/comments?api_key=dd0da2d8-71b0-47b2-b665-f84a68f5fa55");
+req.then((e) => {
+
+    commentsArray = e.data;
+
+    commentsArray.sort((a, b) => {
+        return b.timestamp - a.timestamp;
+    })
+
+    //populate default comments
+    for (let i = 0; i < commentsArray.length; i++) {
+        createComment(commentsArray[i]);
+    }
+})
+
 let firstBreak = document.createElement("hr");
 commentsContainer.appendChild(firstBreak);
 
-//populate default comments
-for (let i = 0; i < commentsArray.length; i++) {
-    createComment(commentsArray[i]);
-}
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
 
-    if (e.target.textarea.value === "") {
-        e.target.textarea.classList.add("reviews__write-comment-textarea--error");
+//event handler is async
+form.addEventListener("submit", (eListen) => {
+    eListen.preventDefault();
+
+    if (eListen.target.textarea.value === "") {
+        eListen.target.textarea.classList.add("reviews__write-comment-textarea--error");
     } else {
+
+
+
+
+
+
+
+
+
+
+
+
+
         commentsContainer.innerHTML = "<div></div>";
-        e.target.textarea.classList.remove("reviews__write-comment-textarea--error");
-        let formName = new String;
-        let formBody = new String;
+        // eListen.target.textarea.classList.remove("reviews__write-comment-textarea--error");
+        // let formName = new String;
+        // let formBody = new String;
 
-        formName = e.target.name.value;
-        formBody = e.target.textarea.value;
+        // formName = eListen.target.name.value;
+        // formBody = eListen.target.textarea.value;
 
-        e.target.textarea.value = "";
-        e.target.name.value = "";
+        // eListen.target.textarea.value = "";
+        // eListen.target.name.value = "";
 
-        console.log("Name: " + e.target.name.value);
-        console.log("Comment: " + e.target.textarea.value);
+        // // let newDate = new Date;
+        // // let date = "0" + newDate.toLocaleDateString();
 
-        let newDate = new Date;
-        let date = "0" + newDate.toLocaleDateString();
+        // const commentObject = {
+        //     'name': formName,
+        //     'comment': formBody
+        // }
 
-        const commentObject = {
-            'name': formName,
-            'date': date,
-            'comment': formBody
-        }
-        commentsArray.push(commentObject);
+        //post comment to server
+        axios.post("https://project-1-api.herokuapp.com/comments?api_key=dd0da2d8-71b0-47b2-b665-f84a68f5fa55", commentObject);
+
+        // commentsArray.push(commentObject);
+
+
+        //get comments request
+        let req = axios.get("https://project-1-api.herokuapp.com/comments?api_key=dd0da2d8-71b0-47b2-b665-f84a68f5fa55");        
+        req.then((e) => {
+            //clear div
+            commentsContainer.innerHTML = "<div></div>";
+            commentsContainer.appendChild(firstBreak);
+
+            commentsArray = e.data;
+            //sort comments 
+            commentsArray.sort((a, b) => {
+                return b.timestamp - a.timestamp;
+            })
+            //populate default comments
+            for (let i = 0; i < commentsArray.length; i++) {
+                createComment(commentsArray[i]);
+            }
+        })
 
         //sorts the comments array to show the latest one first using the convertDateToMils Function
-        commentsArray.sort((a, b) => {
-            return convertDateToMils(b.date) - convertDateToMils(a.date);
-        })
+        // -update- removed the convert to mils function since the timestamp is already in mils
+        // -update- changed ".date" to "".timestamp"
+        // commentsArray.sort((a, b) => {
+        //     return b.timestamp - a.timestamp;
+        // })
+        // console.log("sorted array: " + commentsArray);
+
+
 
         //populate added comments section
         for (let i = 0; i < commentsArray.length; i++) {
