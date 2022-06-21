@@ -38,7 +38,7 @@ let showArray = [
 
 let showNodes = [];
 
-function createShow(showObject) {
+function displayComment(showObject) {
 
     //last to get appended to
     const showsContainer =  document.querySelector(".shows-container__show-container");
@@ -120,5 +120,5 @@ function createShow(showObject) {
 }
 
 for (let i = 0; i < showArray.length; i++) {
-    createShow(showArray[i]);
+    displayComment(showArray[i]);
 }

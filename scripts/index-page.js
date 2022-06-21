@@ -116,13 +116,13 @@ for (let i = 0; i < commentsArray.length; i++) {
     createComment(commentsArray[i]);
 }
 
-
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     if (e.target.textarea.value === "") {
         e.target.textarea.classList.add("reviews__write-comment-textarea--error");
     } else {
+        commentsContainer.innerHTML = "<div></div>";
         e.target.textarea.classList.remove("reviews__write-comment-textarea--error");
         let formName = new String;
         let formBody = new String;
@@ -147,7 +147,7 @@ form.addEventListener("submit", (e) => {
         commentsArray.push(commentObject);
 
         //populate added comments section
-        for (let i = 3; i < commentsArray.length; i++) {
+        for (let i = 0; i < commentsArray.length; i++) {
             createComment(commentsArray[i]);
         }
     }
