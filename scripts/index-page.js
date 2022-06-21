@@ -38,7 +38,6 @@ let commentsContainer = document.querySelector(".reviews__comments");
 let emptyDiv = document.createElement("div");
 emptyDiv.classList.add("reviews__comments");
 
-axios.get
 
 function createComment(commentObject) {
     //largest comment div
@@ -113,7 +112,6 @@ function createComment(commentObject) {
 }
 
 
-
 let commentsArray = new Array;
 
 // //get comments request
@@ -145,47 +143,28 @@ form.addEventListener("submit", (eListen) => {
         eListen.target.textarea.classList.add("reviews__write-comment-textarea--error");
     } else {
 
-
-
-
-
-
-
-
-
-
-
-
-
         commentsContainer.innerHTML = "<div></div>";
-        // eListen.target.textarea.classList.remove("reviews__write-comment-textarea--error");
-        // let formName = new String;
-        // let formBody = new String;
+        eListen.target.textarea.classList.remove("reviews__write-comment-textarea--error");
+    let formName = new String;
+    let formBody = new String;
 
-        // formName = eListen.target.name.value;
-        // formBody = eListen.target.textarea.value;
+    formName = eListen.target.name.value;
+    formBody = eListen.target.textarea.value;
 
-        // eListen.target.textarea.value = "";
-        // eListen.target.name.value = "";
+    eListen.target.textarea.value = "";
+    eListen.target.name.value = "";
 
-        // // let newDate = new Date;
-        // // let date = "0" + newDate.toLocaleDateString();
+    let commentObject = {
+        'name': formName,
+        'comment': formBody
+    }
 
-        // const commentObject = {
-        //     'name': formName,
-        //     'comment': formBody
-        // }
-
-        //post comment to server
-        axios.post("https://project-1-api.herokuapp.com/comments?api_key=dd0da2d8-71b0-47b2-b665-f84a68f5fa55", commentObject);
-
-        // commentsArray.push(commentObject);
-
-
-        //get comments request
-        let req = axios.get("https://project-1-api.herokuapp.com/comments?api_key=dd0da2d8-71b0-47b2-b665-f84a68f5fa55");        
+    let post = axios.post("https://project-1-api.herokuapp.com/comments?api_key=dd0da2d8-71b0-47b2-b665-f84a68f5fa55", commentObject);
+    post.then(() => {
+        let req = axios.get("https://project-1-api.herokuapp.com/comments?api_key=dd0da2d8-71b0-47b2-b665-f84a68f5fa55");
         req.then((e) => {
-            //clear div
+
+            // clear div
             commentsContainer.innerHTML = "<div></div>";
             commentsContainer.appendChild(firstBreak);
 
@@ -194,27 +173,15 @@ form.addEventListener("submit", (eListen) => {
             commentsArray.sort((a, b) => {
                 return b.timestamp - a.timestamp;
             })
-            //populate default comments
+
             for (let i = 0; i < commentsArray.length; i++) {
                 createComment(commentsArray[i]);
             }
+
         })
+    });
+}
 
-        //sorts the comments array to show the latest one first using the convertDateToMils Function
-        // -update- removed the convert to mils function since the timestamp is already in mils
-        // -update- changed ".date" to "".timestamp"
-        // commentsArray.sort((a, b) => {
-        //     return b.timestamp - a.timestamp;
-        // })
-        // console.log("sorted array: " + commentsArray);
-
-
-
-        //populate added comments section
-        for (let i = 0; i < commentsArray.length; i++) {
-            createComment(commentsArray[i]);
-        }
-    }
 })
 
 
