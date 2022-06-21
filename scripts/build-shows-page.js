@@ -18,7 +18,7 @@ let showArray = [
     },
 
     {
-        'date': "Sat Nove 06 2021",
+        'date': "Sat Nov 06 2021",
         'venue': "Hyatt Agency",
         'location': "San Francisco, CA"
     },
@@ -62,7 +62,6 @@ function displayComment(showObject) {
     date.innerText = showObject.date;
     date.classList.add("shows-container__show-info");
     date.classList.add("shows-container__show-info--bold");
-
 
     dateContainer.appendChild(date);
 
