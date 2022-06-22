@@ -84,8 +84,27 @@ function createComment(commentObject) {
     commentDate.classList.add("reviews__comments-container-when");
     // data from from library for date below !!!!
 
-    // ----- FILL IN ------
-    commentDate.innerText = commentObject.timestamp;
+    // Takes the date data from the server and converts it from timestamp to local date
+    timestampLocal = new Date(commentObject.timestamp);
+
+    console.log(typeof(timestampLocal));
+
+    function logDate(timestamp){
+        // if(timestamp.toLocaleDateString()[0] != "0"){
+        //     return "0" + timestamp.toLocaleDateString();
+        // }else{
+        //     return timestamp.toLocaleDateString();
+        // } 
+
+        //adds 0 to the front of month for non-december/november months
+        if((String(timestamp.toLocaleDateString()).slice(0,2) !== "12") && (String(timestamp.toLocaleDateString()).slice(0,2) !== "11")){
+            return "0" + String(timestamp.toLocaleDateString());
+        }else{
+            return String(timestamp.toLocaleDateString());
+        }
+    }
+
+    commentDate.innerText = logDate(timestampLocal);
 
     //appending to parent div
     commentNameDateDiv.appendChild(commentDate);
