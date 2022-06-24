@@ -87,17 +87,10 @@ function createComment(commentObject) {
     // Takes the date data from the server and converts it from timestamp to local date
     timestampLocal = new Date(commentObject.timestamp);
 
-    console.log(typeof(timestampLocal));
+    // console.log(typeof(timestampLocal));
 
     function logDate(timestamp){
-        // if(timestamp.toLocaleDateString()[0] != "0"){
-        //     return "0" + timestamp.toLocaleDateString();
-        // }else{
-        //     return timestamp.toLocaleDateString();
-        // } 
-
-        //adds 0 to the front of month for non-december/november months
-        if((String(timestamp.toLocaleDateString()).slice(0,2) !== "12") && (String(timestamp.toLocaleDateString()).slice(0,2) !== "11")){
+        if((String(timestamp.toLocaleDateString()).slice(0,2) !== "12") && (String(timestamp.toLocaleDateString()).slice(0,2) !== "11") && (String(timestamp.toLocaleDateString()).slice(0,2) !== "10")){
             return "0" + String(timestamp.toLocaleDateString());
         }else{
             return String(timestamp.toLocaleDateString());

@@ -1,47 +1,47 @@
-let showArray = [
-    {
-        'date': "Mon Sept 06 2021",
-        'venue': "Ronald Lane",
-        'location': "San Francisco, CA"
-    },
+// let showArray = [
+//     {
+//         'date': "Mon Sept 06 2021",
+//         'venue': "Ronald Lane",
+//         'location': "San Francisco, CA"
+//     },
 
-    {
-        'date': "Tue Sept 21 2021",
-        'venue': "Pier 3 East",
-        'location': "San Francisco, CA"
-    },
+//     {
+//         'date': "Tue Sept 21 2021",
+//         'venue': "Pier 3 East",
+//         'location': "San Francisco, CA"
+//     },
 
-    {
-        'date': "Fri Oct 15 2021",
-        'venue': "View Lounge",
-        'location': "San Francisco, CA"
-    },
+//     {
+//         'date': "Fri Oct 15 2021",
+//         'venue': "View Lounge",
+//         'location': "San Francisco, CA"
+//     },
 
-    {
-        'date': "Sat Nov 06 2021",
-        'venue': "Hyatt Agency",
-        'location': "San Francisco, CA"
-    },
+//     {
+//         'date': "Sat Nov 06 2021",
+//         'venue': "Hyatt Agency",
+//         'location': "San Francisco, CA"
+//     },
 
-    {
-        'date': "Fri Nov 26 2021",
-        'venue': "Moscow Center",
-        'location': "San Francisco, CA"
-    },
+//     {
+//         'date': "Fri Nov 26 2021",
+//         'venue': "Moscow Center",
+//         'location': "San Francisco, CA"
+//     },
 
-    {
-        'date': "Wed Dec 15 2021",
-        'venue': "Press Club",
-        'location': "San Francisco, CA"
-    }
-]
+//     {
+//         'date': "Wed Dec 15 2021",
+//         'venue': "Press Club",
+//         'location': "San Francisco, CA"
+//     }
+// ]
 
 let showNodes = [];
 
-function displayComment(showObject) {
+function createShow(showObject) {
 
     //last to get appended to
-    const showsContainer =  document.querySelector(".shows-container__show-container");
+    const showsContainer = document.querySelector(".shows-container__show-container");
 
     const showList = document.createElement("ul");
     showList.classList.add("shows-container__show-list");
@@ -59,7 +59,26 @@ function displayComment(showObject) {
     dateContainer.appendChild(dateTitle);
 
     let date = document.createElement("p");
-    date.innerText = showObject.date;
+
+
+    // Takes the date data from the server and converts it from timestamp to local date
+    let showDateTimestamp = new Date (parseInt(showObject.date));
+
+    function logDate(timestamp) {
+        if ((String(timestamp.toLocaleDateString()).slice(0, 2) !== "12") && (String(timestamp.toLocaleDateString()).slice(0, 2) !== "11") && (String(timestamp.toLocaleDateString()).slice(0,2) !== "10")) {
+            return "0" + String(timestamp.toLocaleDateString());
+        } else {
+            return String(timestamp.toLocaleDateString());
+        }
+    }
+
+    let showDate = logDate(showDateTimestamp);
+
+    // ----- FINAL PUSH TO SHOW OBJECT ----
+    date.innerText = showDate;
+
+
+
     date.classList.add("shows-container__show-info");
     date.classList.add("shows-container__show-info--bold");
 
@@ -70,14 +89,13 @@ function displayComment(showObject) {
     venueContainer.classList.add("shows-container__show-div--venue");
     showList.appendChild(venueContainer);
 
-
     let venueTitle = document.createElement("p");
     venueTitle.innerText = "VENUE";
     venueTitle.classList.add("shows-container__show-title");
     venueContainer.appendChild(venueTitle);
 
     let venue = document.createElement("p");
-    venue.innerText = showObject.venue;
+    venue.innerText = showObject.place;
     venue.classList.add("shows-container__show-info");
     venueContainer.appendChild(venue);
 
@@ -85,7 +103,6 @@ function displayComment(showObject) {
     let locationContainer = document.createElement("div");
     locationContainer.classList.add("shows-container__show-div--location");
     showList.appendChild(locationContainer);
-
 
     let locationTitle = document.createElement("p");
     locationTitle.innerText = "LOCATION"
@@ -109,7 +126,7 @@ function displayComment(showObject) {
 
     showList.addEventListener("click", (e) => {
         let current = document.querySelector('.shows-container__show-list--selected');
-        if(current) {
+        if (current) {
             current.classList.remove('shows-container__show-list--selected');
         }
         let el = e.target.closest('.shows-container__show-list');
@@ -118,6 +135,20 @@ function displayComment(showObject) {
 
 }
 
-for (let i = 0; i < showArray.length; i++) {
-    displayComment(showArray[i]);
-}
+let showsArray = new Array;
+
+let myArray = axios.get("https://project-1-api.herokuapp.com/showdates?api_key=dd0da2d8-71b0-47b2-b665-f84a68f5fa55");
+myArray.then((resp) => {
+    showsArray = resp.data;
+
+    //populate default comments
+    for (let i = 0; i < showsArray.length; i++) {
+        createShow(showsArray[i]);
+    }
+})
+
+console.log(myArray);
+
+// for (let i = 0; i < showArray.length; i++) {
+//     displayShow(showArray[i]);
+// }
