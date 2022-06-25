@@ -1,0 +1,25 @@
+&__poc {
+    @include mobile-body-copy;
+    color: $white;
+    gap: 1rem 0rem;
+    padding: 1rem 0rem;
+
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2.5rem;
+        flex-shrink: 0;
+        font-size: 1rem;
+
+        &-name-company-container {
+            font-weight: 600;
+        }
+
+    }
+
+    @include desktop {
+        justify-content: start;
+    }
+}
+

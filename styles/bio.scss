@@ -67,49 +67,46 @@ hr {
 
     }
 
-    &__image {
-        width: 100%;
 
-        &-container {
-            gap: 0.5rem 0rem;
+    &__image-container {
+        gap: 0.5rem 0rem;
+
+        @include tablet {
+            padding: 0rem 6rem;
+            gap: 2rem;
+        }
+
+        &-image{
+            width: 100%;
+        }
+
+        &-quote {
+            @include mobile-body-copy;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 1.5rem;
 
             @include tablet {
-                padding: 0rem 6rem;
-                gap: 2rem;
+                font-size: 2rem;
+                line-height: 3rem;
             }
 
-            &-quote {
+            &--teddy-bryan {
                 @include mobile-body-copy;
                 font-weight: 600;
                 letter-spacing: 1px;
                 line-height: 1.5rem;
 
                 @include tablet {
-                    font-size: 2rem;
-                    line-height: 3rem;
-                }
-
-                &--teddy-bryan {
-                    @include mobile-body-copy;
+                    font-size: 1.55rem;
                     font-weight: 600;
-                    letter-spacing: 1px;
-                    line-height: 1.5rem;
-
-                    @include tablet {
-                        font-size: 1.55rem;
-                        font-weight: 600;
-                    }
                 }
             }
-
-
-
-
-
-
         }
-
     }
+
+
+
 
     &__description {
 
@@ -124,18 +121,20 @@ hr {
                 font-size: 2rem;
                 gap: 1rem;
             }
-        }
 
-        &-text {
-            @include mobile-body-copy;
-
-            @include tablet {
-                font-size: 1.4rem;
-                line-height: 2rem;
+            &-text {
+                @include mobile-body-copy;
+    
+                @include tablet {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                }
+    
+    
             }
-
-
         }
+
+        
 
         &-subheader {
             @include mobile-body-copy;
@@ -158,23 +157,7 @@ hr {
         padding-left: 7rem;
     }
 
-    &__photo {
-        width: 100%;
-        filter: grayscale(100%);
-
-
-        &:hover {
-            filter: grayscale(0%);
-            transition-duration: 1s;
-        }
-
-        @include tablet {
-            width: 33%;
-            gap: 0rem;
-            padding: 1rem;
-        }
-
-    }
+    
 
     &__photos-container {
         gap: 1rem 0rem;
@@ -186,6 +169,24 @@ hr {
             display: flex;
             flex-direction: row;
 
+        }
+
+        &-photo {
+            width: 100%;
+            filter: grayscale(100%);
+    
+    
+            &:hover {
+                filter: grayscale(0%);
+                transition-duration: 1s;
+            }
+    
+            @include tablet {
+                width: 33%;
+                gap: 0rem;
+                padding: 1rem;
+            }
+    
         }
     }
 
@@ -205,7 +206,7 @@ hr {
         @include mobile-section-header;
     }
 
-    &__content {
+    &__content-container {
         @include tablet {
             padding: 0rem 6rem;
         }
@@ -284,7 +285,7 @@ hr {
     }
 
     &__comments {
-        
+
 
         &-comment {
             @include mobile-body-copy;

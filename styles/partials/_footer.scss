@@ -14,9 +14,31 @@
             align-items: center;
             gap: 3rem;
         }
+
+        &-title {
+            @include mobile-section-header;
+            color: $white;
+
+            @include tablet {
+                font-size: 3rem;
+            }
+        }
+
+        &-links {
+            justify-content: space-between;
+            flex-direction: row;
+            width: 50%;
+            height: 1.7rem;
+            display: flex;
+
+            @include tablet {
+                width: fit-content;
+                gap: 3rem;
+            }
+        }
     }
 
-    &__points-of-contact {
+    &__poc {
         gap: 1rem 0rem;
         padding: 1rem 0rem;
 
@@ -27,89 +49,84 @@
             gap: 2rem;
         }
 
-        @include desktop{
+        @include desktop {
             justify-content: start;
         }
-    }
+    
 
-    &__poc {
-        gap: 1rem 0rem;
-
-        @include tablet {
-            gap: 2.5rem;
-            flex-shrink: 0;
-        }
-    }
-
-    &__header {
-        @include mobile-section-header;
-        color: $white;
-
-        @include tablet {
-            font-size: 3rem;
-        }
-    }
-
-
-
-
-
-
-    &__icons {
-        justify-content: space-between;
-        flex-direction: row;
-        width: 50%;
-        height: 1.7rem;
-        display: flex;
-
-        @include tablet {
-            width: fit-content;
-            gap: 3rem;
-        }
-    }
-
-    &__poc {
+        &-company-container {
         @include mobile-body-copy;
         color: $white;
+        gap: 1rem 0rem;
+        padding: 1rem 0rem;
 
-        @include tablet {
-            font-size: 1rem;
+            @include tablet {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 2.5rem;
+                flex-shrink: 0;
+                font-size: 1rem;
+
+                &-name-company-container {
+                    font-weight: 600;
+                }
+
+            }
+        
+
+            @include desktop {
+                justify-content: start;
+            }
+
+            &-content {
+                &-text {
+
+                    &--bold {
+                        font-weight: 600;
+                    }
+
+                }
+
+            }
         }
 
-        &-name-company-container {
-            font-weight: 600;
-        }
+
+
     }
 
     &__copyright {
         margin-top: 2.2rem;
         gap: 0.5rem 0rem;
         // position: relative;
-
+    
         &-title {
             @include mobile-page-header;
             color: $white;
-
+    
             @include tablet {
                 position: absolute;
                 top: 60px;
                 right: 48px;
                 font-size: 2rem;
             }
-
+    
             @include desktop {
                 right: 147px;
             }
         }
-
+    
         &-text {
             @include mobile-body-copy;
             color: $white;
             font-size: 0.7rem;
-
+    
             @include tablet {
                 font-size: 1rem;
             }
         }
     }
 }
+
+
+

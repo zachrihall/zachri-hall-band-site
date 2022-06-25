@@ -34,7 +34,7 @@
 
     <section class="about">
         <h1 class="about__header">About the Musicians</h1>
-        <div class="about__image">
+        <div class="about__image-container">
             <!--change name below to folow BEM-->
             <img class="about__image-container-image" alt="about-the-musicians-stage-photo" src="./assets/images/band.jpg" />
             <p class="about__image-container-quote">“We push each other to be the best. It’s not uncommon for one of us
@@ -42,7 +42,7 @@
                 ‘this needs to be better, back to the drawing board’”
             </p>
 
-            <p class="about__image-container-quote--teddy-bryan">- Bryan Teddy, lead vocalist of The Bees Knees</p>
+            <p class="about__image-container-quote about__image-container-quote--teddy-bryan">- Bryan Teddy, lead vocalist of The Bees Knees</p>
 
         </div>
         <br>
@@ -50,7 +50,7 @@
             <h2 class="about__description-subheader">The Bees Knees</h2>
             <br>
             <div class="about__description-text-container">
-                <p class="about__description-text">The Bees Knees is a pop rock band originating from San Francisco,
+                <p class="about__description-text-container-text">The Bees Knees is a pop rock band originating from San Francisco,
                     California.
                     The band consists of lead vocalist Bryan Teddy, guitarist Mack Tolkens, guitarist Andrew Green,
                     bassist
@@ -61,7 +61,7 @@
                     The Room, One Trick Pony, The Cat’s Meow), Adams was confident the band could succeed even further,
                     pushing them to sign with Magenta Records.</p>
                 <br>
-                <p class="about__description-text">From there, the band has soared, gaining international recognition
+                <p class="about__description-text-container-text">From there, the band has soared, gaining international recognition
                     and
                     ranking
                     in the top 10 on the Poster Charts. New fans immediately fell in love with the band’s original and
@@ -78,25 +78,22 @@
     <section class="photo-gallery">
         <h2 class="photo-gallery__section-heading">Photo Gallery</h2>
         <div class="photo-gallery__photos-container">
-            <img src="./assets/images/Photo-gallery-1.jpg" alt="smoke-laser-concert" class="photo-gallery__photo">
-            <img src="./assets/images/Photo-gallery-2.jpg" alt="woman-concert-on-shoulders"
-                class="photo-gallery__photo">
-            <img src="./assets/images/Photo-gallery-3.jpg" alt="hands-in-the-air-concert" class="photo-gallery__photo">
-            <img src="./assets/images/Photo-gallery-4.jpg" alt="woman-concert-on-shoulders"
-                class="photo-gallery__photo">
-            <img src="./assets/images/Photo-gallery-5.jpg" alt="confetti-concert" class="photo-gallery__photo">
-            <img src="./assets/images/Photo-gallery-6.jpg" alt="artist-concert-performing" class="photo-gallery__photo">
-            <img src="./assets/images/Photo-gallery-7.jpg" alt="light-show-confetti-concert"
-                class="photo-gallery__photo">
-            <img src="./assets/images/Photo-gallery-8.jpg" alt="turntables" class="photo-gallery__photo">
-            <img src="./assets/images/Photo-gallery-9.jpg" alt="confetti-falling-concert" class="photo-gallery__photo">
+            <img src="./assets/images/Photo-gallery-1.jpg" alt="smoke-laser-concert" class="photo-gallery__photos-container-photo">
+            <img src="./assets/images/Photo-gallery-2.jpg" alt="woman-concert-on-shoulders" class="photo-gallery__photos-container-photo">
+            <img src="./assets/images/Photo-gallery-3.jpg" alt="hands-in-the-air-concert" class="photo-gallery__photos-container-photo">
+            <img src="./assets/images/Photo-gallery-4.jpg" alt="woman-concert-on-shoulders" class="photo-gallery__photos-container-photo">
+            <img src="./assets/images/Photo-gallery-5.jpg" alt="confetti-concert" class="photo-gallery__photos-container-photo">
+            <img src="./assets/images/Photo-gallery-6.jpg" alt="artist-concert-performing" class="photo-gallery__photos-container-photo">
+            <img src="./assets/images/Photo-gallery-7.jpg" alt="light-show-confetti-concert" class="photo-gallery__photos-container-photo">
+            <img src="./assets/images/Photo-gallery-8.jpg" alt="turntables" class="photo-gallery__photos-container-photo">
+            <img src="./assets/images/Photo-gallery-9.jpg" alt="confetti-falling-concert" class="photo-gallery__photos-container-photo">
         </div>
     </section>
 
     <section class="reviews">
         <h1 class="reviews__title">Join the Conversation</h1>
-        <div class="reviews__content">
-            <div class="reviews__write-comment">
+        <div class="reviews__content">  <!--reviews__content-container-->
+            <div class="reviews__write-comment"> <!--reviews__content-container-->
                 <img src="./assets/images/Mohan-muruge.jpg" alt="user-photo"
                     class="reviews__write-comment-user-picture">
                 <div class="reviews__write-comment-container">
@@ -148,55 +145,55 @@
     <section class="footer">
         <footer>
             <div class="footer__header-icons">
-                <h2 class="footer__header">Get in Touch</h2>
-                <div class="footer__icons">
+                <h2 class="footer__header-icons-title">Get in Touch</h2>
+                <div class="footer__header-icons-links">
                     <a href="https://www.instagram.com"><img src="./assets/icons/SVG/Icon-instagram.svg"
-                            alt="instagram-logo" class="footer__icon"></a>
+                            alt="instagram-logo" class="footer__header-icons-links-icon"></a>
                     <a href="https://www.facebook.com"><img src="./assets/icons/SVG/Icon-facebook.svg"
-                            alt="facebook-logo" class="footer__icon"></a>
+                            alt="facebook-logo" class="footer__header-icons-links-icon"></a>
                     <a href="https://www.twitter.com"><img src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter-logo"
                             class="footer__icon"></a>
                 </div>
             </div>
 
-            <div class="footer__points-of-contact">
-                <div class="footer__poc">
-                    <div class="footer__poc-name-company-container">
-                        <p class="footer__poc-name">Cam Adams</p>
-                        <p class="footer__poc-company">The Bees Knees Management</p>
+            <div class="footer__poc"> 
+                <div class="footer__poc-company-container footer__poc-company-container--cam-adams"> 
+                    <div class="footer__poc-company-container-content footer__poc-company-container-content--name"> 
+                        <p class="footer__poc-company-container-content-text footer__poc-company-container-content-text--bold">Cam Adams</p> 
+                        <p class="footer__poc-company-container-content-text footer__poc-company-container-content-text--bold">The Bees Knees Management</p>
                     </div>
-                    <div class="footer__poc-location-container">
-                        <p class="footer__poc-location">503 Broadway Penthouse</p>
-                        <p class="footer__poc-location">New York, NY 10012, USA</p>
+                    <div class="footer__poc-company-container-content footer__poc-company-container-content--location"> 
+                        <p class="footer__poc-company-container-content-text">503 Broadway Penthouse</p>
+                        <p class="footer__poc-company-container-content-text">New York, NY 10012, USA</p> 
                     </div>
-                    <div class="footer__poc-email-container">
-                        <p class="footer__poc-email">info@thebeesknees.com</p>
-                    </div>
-                </div>
-                <div class="footer__poc">
-                    <div class="footer__poc-name-company-container">
-                        <p class="footer__poc-name">Pearl Gregg</p>
-                        <p class="footer__poc-company">Limitless Artist Group</p>
-                    </div>
-                    <div class="footer__poc-location-container">
-                        <p class="footer__poc-location">Booking Agent for</p>
-                        <p class="footer__poc-location">US / South America / Japan</p>
-                    </div>
-                    <div class="footer__poc-email-container">
-                        <p class="footer__poc-email">pearl.gregg@limitlessag.com</p>
+                    <div class="footer__poc-company-container-content footer__poc-company-container-content--email"> 
+                        <p class="footer__poc-company-container-content-text">info@thebeesknees.com</p> 
                     </div>
                 </div>
-                <div class="footer__poc">
-                    <div class="footer__poc-name-company-container">
-                        <p class="footer__poc-name">Carson Whyte</p>
-                        <p class="footer__poc-company">ARCH Entertainment</p>
+                <div class="footer__poc-company-container footer__poc-company-container--pearl-gregg">
+                    <div class="footer__poc-company-container-content footer__poc-company-container-content--name">
+                        <p class="footer__poc-company-container-content-text footer__poc-company-container-content-text--bold">Pearl Gregg</p>
+                        <p class="footer__poc-company-container-content-text footer__poc-company-container-content-text--bold">Limitless Artist Group</p>
                     </div>
-                    <div class="footer__poc-location-container">
-                        <p class="footer__poc-location">Booking Agent for</p>
-                        <p class="footer__poc-location">UK / EU / AU </p>
+                    <div class="footer__poc-company-container-content footer__poc-company-container-content--location">
+                        <p class="footer__poc-company-container-content-text">Booking Agent for</p>
+                        <p class="footer__poc-company-container-content-text">US / South America / Japan</p>
                     </div>
-                    <div class="footer__poc-email-container">
-                        <p class="footer__poc-email">cwhyte@archerentertainment.com</p>
+                    <div class="footer__poc-company-container-content footer__poc-company-container-content--email">
+                        <p class="footer__poc-company-container-content-text">pearl.gregg@limitlessag.com</p>
+                    </div>
+                </div>
+                <div class="footer__poc-company-container footer__poc-company-container--carson-whyte">
+                    <div class="footer__poc-company-container-content footer__poc-company-container-content--name">
+                        <p class="footer__poc-company-container-content-text footer__poc-company-container-content-text--bold">Carson Whyte</p>
+                        <p class="footer__poc-company-container-content-text footer__poc-company-container-content-text--bold">ARCH Entertainment</p>
+                    </div>
+                    <div class="footer__poc-company-container-content footer__poc-company-container-content--location">
+                        <p class="footer__poc-company-container-content-text">Booking Agent for</p>
+                        <p class="footer__poc-company-container-content-text">UK / EU / AU </p>
+                    </div>
+                    <div class="footer__poc-company-container-content footer__poc-company-container-content--email">
+                        <p class="footer__poc-company-container-content-text">cwhyte@archerentertainment.com</p>
                     </div>
                 </div>
             </div>
