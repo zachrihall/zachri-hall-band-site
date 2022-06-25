@@ -153,9 +153,17 @@
     &__show {
         position: relative;
 
+        &-break{
+            margin: 2rem 0rem;
+        }
+
         &-div {
             gap: 1rem;
+        }
 
+        &-btn-form{
+            display: flex;
+            align-content: center;
         }
 
         &-btn {

@@ -50,7 +50,8 @@ function createShow(showObject) {
 
     //date section
     let dateContainer = document.createElement("div");
-    // dateContainer.classList.add("shows-container__show-div shows-container__show-div--date");
+    dateContainer.classList.add("shows-container__show-div");
+    dateContainer.classList.add("shows-container__show-div--date");
     showList.appendChild(dateContainer);
 
     let dateTitle = document.createElement("p");
@@ -65,19 +66,13 @@ function createShow(showObject) {
     let showDateTimestamp = new Date (parseInt(showObject.date));
 
     function logDate(timestamp) {
-        if ((String(timestamp.toLocaleDateString()).slice(0, 2) !== "12") && (String(timestamp.toLocaleDateString()).slice(0, 2) !== "11") && (String(timestamp.toLocaleDateString()).slice(0,2) !== "10")) {
-            return "0" + String(timestamp.toLocaleDateString());
-        } else {
-            return String(timestamp.toLocaleDateString());
-        }
+        return timestamp.toDateString();
     }
 
     let showDate = logDate(showDateTimestamp);
 
     // ----- FINAL PUSH TO SHOW OBJECT ----
     date.innerText = showDate;
-
-
 
     date.classList.add("shows-container__show-info");
     date.classList.add("shows-container__show-info--bold");
@@ -86,6 +81,7 @@ function createShow(showObject) {
 
     //venue section
     let venueContainer = document.createElement("div");
+    venueContainer.classList.add("shows-container__show-div");
     venueContainer.classList.add("shows-container__show-div--venue");
     showList.appendChild(venueContainer);
 
@@ -101,6 +97,7 @@ function createShow(showObject) {
 
     //location section
     let locationContainer = document.createElement("div");
+    locationContainer.classList.add("shows-container__show-div");
     locationContainer.classList.add("shows-container__show-div--location");
     showList.appendChild(locationContainer);
 
@@ -115,14 +112,24 @@ function createShow(showObject) {
     locationContainer.appendChild(location);
 
     //Button
+    let buttonForm = document.createElement("form");
+    buttonForm.classList.add("shows-container__show-btn-form");
+
+
     let button = document.createElement("button");
     button.innerText = "BUY TICKETS";
     button.classList.add("shows-container__show-btn");
-    showList.appendChild(button);
+    buttonForm.appendChild(button);
+    showList.appendChild(buttonForm);
+    // showList.appendChild(button);
+    
+
 
     let horizontalBreak = document.createElement("hr");
     horizontalBreak.classList.add("shows-container__show-break");
     showsContainer.appendChild(horizontalBreak);
+
+    
 
     showList.addEventListener("click", (e) => {
         let current = document.querySelector('.shows-container__show-list--selected');

@@ -446,8 +446,15 @@ div {
 .shows-container__show {
   position: relative;
 }
+.shows-container__show-break {
+  margin: 2rem 0rem;
+}
 .shows-container__show-div {
   gap: 1rem;
+}
+.shows-container__show-btn-form {
+  display: flex;
+  align-content: center;
 }
 .shows-container__show-btn {
   font-family: "Avenir-Next";
