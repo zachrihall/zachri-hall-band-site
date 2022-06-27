@@ -33,7 +33,7 @@
     </section>
 
     <section class="about">
-        <h1 class="about__header">About the Musicians</h1>
+        <h2 class="about__header">About the Musicians</h1>
         <div class="about__image-container">
             <!--change name below to folow BEM-->
             <img class="about__image-container-image" alt="about-the-musicians-stage-photo" src="./assets/images/band.jpg" />
@@ -91,45 +91,45 @@
     </section>
 
     <section class="reviews">
-        <h1 class="reviews__title">Join the Conversation</h1>
+        <h2 class="reviews__title">Join the Conversation</h1>
         <div class="reviews__content">  <!--reviews__content-container-->
             <div class="reviews__write-comment"> <!--reviews__content-container-->
-                <img src="./assets/images/Mohan-muruge.jpg" alt="user-photo"
-                    class="reviews__write-comment-user-picture">
+                <!-- <img src="./assets/images/Mohan-muruge.jpg" alt="user-photo"
+                    class="reviews__write-comment-user-picture"> -->
                 <div class="reviews__write-comment-container">
 
                     <!-- FORM -->
-                    <form class="reviews__write-comment-form">
-                        <div class="reviews__write-comment-input-container">
-                            <label for="name" class="reviews__write-comment-label">NAME</label>
-                            <input type="text" class="reviews__write-comment-name-input" name="name"
+                    <form class="reviews__write-comment-container-form"> <!--reviews__write-comment-form"-->
+                        <div class="reviews__write-comment-container-form-div reviews__write-comment-container-form-div--name">
+                            <label for="name" class="reviews__write-comment-container-form-div-label reviews__write-comment-container-form-div-label--name">NAME</label>
+                            <input type="text" class="reviews__write-comment-container-form-div-input reviews__write-comment-container-form-div-label-input--name" name="name"
                                 placeholder="Enter your name">
                         </div>
-                        <div class="reviews__write-comment-input-container">
-                            <label class="reviews__write-comment-label" for="textarea"
+                        <div class="reviews__write-comment-div-input-container reviews__write-comment-div-input-container--comment">
+                            <label class="reviews__write-comment-container-form-div-label reviews__write-comment-container-form-div-label--comment" for="textarea"
                                 value="Enter your name">COMMENT</label>
-                            <textarea class="reviews__write-comment-textarea" name="textarea"
+                            <textarea class="reviews__write-comment-container-form-div-input reviews__write-comment-container-form-div-label-input--textarea" name="textarea"
                                 placeholder="Add a new comment"></textarea>
                         </div>
-                        <button type="submit" class="reviews__write-comment-submit">COMMMENT</button>
+                        <button type="submit" class="reviews__write-comment-container-form-submit">COMMMENT</button>
                     </form>
                     <!-- FORM -->
 
                 </div>
             </div>
             <div class="reviews__comments">
-                <div class="reviews__comments-comment review__comments-comment--connor">
+                <div class="reviews__comments-container">
                     <!-- Empty comment-->
-                    <div class="reviews__comments-container-user-picture-container">
+                    <div class="reviews__comments-container-user-picture-container--">
                         <!-- <div class="reviews__comments-container-user-picture"></div> -->
                     </div>
-                    <div class="review__comments-info-container">
-                        <div class="reviews__comments-container">
-                            <p class="reviews__comments-container-user-name"></p>
-                            <p class="reviews__comments-container-when"></p>
+                    <!-- <div class="review__comments-container-info-container">
+                        <div class="reviews__comments-container-info-container-div">
+                            <p class="reviews__comments-container-info-container-div-text reviews__comments-container-info-container-div-text--user-name"></p>
+                            <p class="reviews__comments-container-info-container-div-text reviews__comments-container-info-container-div-text--when"></p>
                         </div>
-                        <p class="reviews__comments-comment"></p>
-                    </div>
+                        <p class="reviews__comments-info-container-comment"></p>
+                    </div> -->
                 </div>
                 <!-- Comments Section in JS -->
 
@@ -199,7 +199,7 @@
             </div>
 
             <div class="footer__copyright">
-                <h1 class="footer__copyright-title">BANDSITE</h1>
+                <h2 class="footer__copyright-title">BANDSITE</h1>
                 <p class="footer__copyright-text">Copyright The Bees Knees © 2021 All Rights Reserved</p>
             </div>
 

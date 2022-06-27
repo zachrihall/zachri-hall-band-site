@@ -76,7 +76,7 @@ hr {
             gap: 2rem;
         }
 
-        &-image{
+        &-image {
             width: 100%;
         }
 
@@ -124,17 +124,17 @@ hr {
 
             &-text {
                 @include mobile-body-copy;
-    
+
                 @include tablet {
                     font-size: 1.4rem;
                     line-height: 2rem;
                 }
-    
-    
+
+
             }
         }
 
-        
+
 
         &-subheader {
             @include mobile-body-copy;
@@ -157,7 +157,7 @@ hr {
         padding-left: 7rem;
     }
 
-    
+
 
     &__photos-container {
         gap: 1rem 0rem;
@@ -174,19 +174,19 @@ hr {
         &-photo {
             width: 100%;
             filter: grayscale(100%);
-    
-    
+
+
             &:hover {
                 filter: grayscale(0%);
                 transition-duration: 1s;
             }
-    
+
             @include tablet {
                 width: 33%;
                 gap: 0rem;
                 padding: 1rem;
             }
-    
+
         }
     }
 
@@ -204,9 +204,14 @@ hr {
 .reviews {
     &__title {
         @include mobile-section-header;
+
+        @include tablet{
+            font-size: 3rem;
+            
+        }
     }
 
-    &__content-container {
+    &__content {
         @include tablet {
             padding: 0rem 6rem;
         }
@@ -222,109 +227,300 @@ hr {
         gap: 1rem;
         padding-top: 1rem;
 
-        &-input-container {
-            gap: 0.25rem;
-        }
-
-        &-container {
-            gap: 1rem;
-            width: 100%;
-        }
-
         &-user-picture {
             border-radius: 50%;
             width: 2.5rem;
             height: 2.5rem;
         }
 
-        &-form {
-            display: flex;
-            flex-direction: column;
+        &-container {
+            gap: 1rem;
             width: 100%;
-            gap: 1.5rem;
-            padding-bottom: 1rem;
-        }
 
-        &-label {
-            @include mobile-body-copy;
-            color: $silver;
-            font-weight: 600;
-            font-size: 1rem;
-            margin-left: 4px;
-        }
+            &-form {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 1.5rem;
+                padding-bottom: 1rem;
 
-        /* -- SUBMIT BUTTON -- */
-        &-submit {
-            @include mobile-sub-header;
-            background-color: #323232;
-            color: #fff;
-            border-radius: 5px;
-            width: 100%;
-            padding: 0.5rem;
-            font-weight: 600;
-            border: none;
+                &-submit {
+                    @include mobile-sub-header;
+                    background-color: #323232;
+                    color: #fff;
+                    border-radius: 5px;
+                    width: 100%;
+                    padding: 0.5rem;
+                    font-weight: 600;
+                    border: none;
 
-            @include tablet {
-                align-self: end;
-                width: fit-content;
-                padding: 1rem 2rem;
-            }
-        }
+                    @include tablet {
+                        align-self: end;
+                        width: fit-content;
+                        padding: 1rem 2rem;
+                    }
 
-        &-name-input {
-            @include form-field;
-        }
+                }
 
-        &-textarea {
-            @include form-field;
+                &-div {
+                    gap: 0.25rem;
 
-            &--error {
-                border: 1px solid red;
+                    // Modifiers
+                    &--name {}
+
+                    &--comment {}
+
+                    &-label {
+                        @include mobile-body-copy;
+                        color: $silver;
+                        font-weight: 600;
+                        font-size: 1rem;
+                        margin-left: 4px;
+
+                        &--name {
+                            @include mobile-sub-header;
+                            color: $silver;
+                            padding: 0px;
+                            font-weight: 600;
+                        }
+
+                        &--comment {}
+
+                        &-input {
+                            &--name {
+                                @include form-field;
+                            }
+
+                            &--textarea {
+                                @include form-field;
+
+                                &--error {
+                                    border: 1px solid red;
+                                }
+
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 
     &__comments {
-
-
-        &-comment {
+        &-container {
+            width: 100%;
             @include mobile-body-copy;
             display: flex;
             flex-direction: row;
             font-size: 1rem;
             gap: 1rem;
             padding: 1.25rem 0rem;
-        }
 
-        &-info-container {
-            width: 100%;
-        }
-
-        &-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            padding-bottom: 0.5rem;
-
-            &-user-picture {
+            &-user-picture-container {
                 background-color: #dddddd;
                 border-radius: 50%;
-                height: 36px;
-                width: 36px;
+                width: 2.5rem;
+                height: 2.5rem;
+        
             }
 
-            &-user-name {
-                @include mobile-sub-header;
-                padding: 0px;
-                font-weight: 600;
+            &-info-container {
+                gap: 1rem;
+                width: 100%;
+
+                &-div {
+                    width: 100%;
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding-bottom: 0.5rem;
+
+                    &-text {
+                        line-height: 1rem;
+                        &--user-name {
+                            @include mobile-sub-header;
+                            padding: 0px;
+                            font-weight: 600;
+                        }
+
+                        &--when {
+                            @include mobile-sub-header;
+                            padding: 0px;
+                            color: $silver;
+                        }
+                    }
+                }
+
+                &-comment {
+                    @include mobile-body-copy;
+                    display: flex;
+                    flex-direction: row;
+                    font-size: 1rem;
+                    gap: 1rem;
+                    padding: 1.25rem 0rem;
+                }
+
             }
 
-            &-when {
-                @include mobile-sub-header;
-                padding: 0px;
-                color: $silver;
-            }
         }
+
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // &__title {
+    //     @include mobile-section-header;
+    // }
+
+    // &__content-container {
+    //     @include tablet {
+    //         padding: 0rem 6rem;
+    //     }
+
+    //     @include desktop {
+    //         padding: 0rem 16rem;
+    //     }
+    // }
+
+    // &__write-comment {
+    //     flex-direction: row;
+    //     justify-content: start;
+    //     gap: 1rem;
+    //     padding-top: 1rem;
+
+    //     &-input-container {
+    //         gap: 0.25rem;
+    //     }
+
+    //     &-container {
+    //         gap: 1rem;
+    //         width: 100%;
+    //     }
+
+    //     &-user-picture {
+    //         border-radius: 50%;
+    //         width: 2.5rem;
+    //         height: 2.5rem;
+    //     }
+
+    //     &-form {
+    //         display: flex;
+    //         flex-direction: column;
+    //         width: 100%;
+    //         gap: 1.5rem;
+    //         padding-bottom: 1rem;
+    //     }
+
+    //     &-label {
+    //         @include mobile-body-copy;
+    //         color: $silver;
+    //         font-weight: 600;
+    //         font-size: 1rem;
+    //         margin-left: 4px;
+    //     }
+
+    //     /* -- SUBMIT BUTTON -- */
+    //     &-submit {
+    //         @include mobile-sub-header;
+    //         background-color: #323232;
+    //         color: #fff;
+    //         border-radius: 5px;
+    //         width: 100%;
+    //         padding: 0.5rem;
+    //         font-weight: 600;
+    //         border: none;
+
+    //         @include tablet {
+    //             align-self: end;
+    //             width: fit-content;
+    //             padding: 1rem 2rem;
+    //         }
+    //     }
+
+    //     &-name-input {
+    //         @include form-field;
+    //     }
+
+    //     &-textarea {
+    //         @include form-field;
+
+    //         &--error {
+    //             border: 1px solid red;
+    //         }
+    //     }
+    // }
+
+    // &__comments {
+
+
+    //     &-comment {
+    //         @include mobile-body-copy;
+    //         display: flex;
+    //         flex-direction: row;
+    //         font-size: 1rem;
+    //         gap: 1rem;
+    //         padding: 1.25rem 0rem;
+    //     }
+
+    //     &-info-container {
+    //         width: 100%;
+    //     }
+
+    //     &-container {
+    //         display: flex;
+    //         flex-direction: row;
+    //         justify-content: space-between;
+    //         padding-bottom: 0.5rem;
+
+    //         &-user-picture {
+    //             background-color: #dddddd;
+    //             border-radius: 50%;
+    //             height: 36px;
+    //             width: 36px;
+    //         }
+
+    //         &-user-name {
+    //             @include mobile-sub-header;
+    //             padding: 0px;
+    //             font-weight: 600;
+    //         }
+
+    //         &-when {
+    //             @include mobile-sub-header;
+    //             padding: 0px;
+    //             color: $silver;
+    //         }
+    //     }
+    // }
 
 }

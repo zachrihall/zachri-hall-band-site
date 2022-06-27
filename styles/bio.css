@@ -504,12 +504,17 @@ div {
   padding-bottom: 1rem;
 }
 @media (min-width: 769px) {
-  .reviews__content-container {
+  .reviews__title {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 769px) {
+  .reviews__content {
     padding: 0rem 6rem;
   }
 }
 @media (min-width: 1279px) {
-  .reviews__content-container {
+  .reviews__content {
     padding: 0rem 16rem;
   }
 }
@@ -518,40 +523,24 @@ div {
   justify-content: start;
   gap: 1rem;
   padding-top: 1rem;
-  /* -- SUBMIT BUTTON -- */
-}
-.reviews__write-comment-input-container {
-  gap: 0.25rem;
-}
-.reviews__write-comment-container {
-  gap: 1rem;
-  width: 100%;
 }
 .reviews__write-comment-user-picture {
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
 }
-.reviews__write-comment-form {
+.reviews__write-comment-container {
+  gap: 1rem;
+  width: 100%;
+}
+.reviews__write-comment-container-form {
   display: flex;
   flex-direction: column;
   width: 100%;
   gap: 1.5rem;
   padding-bottom: 1rem;
 }
-.reviews__write-comment-label {
-  font-family: "Avenir-Next";
-  font-style: normal;
-  font-size: 0.8rem;
-  line-height: 1.12rem;
-  font-weight: 400;
-  color: #323232;
-  color: #AFAFAF;
-  font-weight: 600;
-  font-size: 1rem;
-  margin-left: 4px;
-}
-.reviews__write-comment-submit {
+.reviews__write-comment-container-form-submit {
   font-family: "Avenir-Next";
   font-style: normal;
   font-size: 1.14rem;
@@ -567,7 +556,7 @@ div {
   border: none;
 }
 @media (min-width: 769px) {
-  .reviews__write-comment-submit {
+  .reviews__write-comment-container-form-submit {
     align-self: end;
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -575,7 +564,33 @@ div {
     padding: 1rem 2rem;
   }
 }
-.reviews__write-comment-name-input {
+.reviews__write-comment-container-form-div {
+  gap: 0.25rem;
+}
+.reviews__write-comment-container-form-div-label {
+  font-family: "Avenir-Next";
+  font-style: normal;
+  font-size: 0.8rem;
+  line-height: 1.12rem;
+  font-weight: 400;
+  color: #323232;
+  color: #AFAFAF;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-left: 4px;
+}
+.reviews__write-comment-container-form-div-label--name {
+  font-family: "Avenir-Next";
+  font-style: normal;
+  font-size: 1.14rem;
+  font-weight: 400;
+  color: #323232;
+  padding-bottom: 1rem;
+  color: #AFAFAF;
+  padding: 0px;
+  font-weight: 600;
+}
+.reviews__write-comment-container-form-div-label-input--name {
   background-color: #FAFAFA;
   border: 1px solid #E1E1E1;
   border-radius: 4px;
@@ -591,10 +606,10 @@ div {
   font-weight: 400;
   color: #323232;
 }
-.reviews__write-comment-name-input:focus {
+.reviews__write-comment-container-form-div-label-input--name:focus {
   border: 1px solid #323232;
 }
-.reviews__write-comment-textarea {
+.reviews__write-comment-container-form-div-label-input--textarea {
   background-color: #FAFAFA;
   border: 1px solid #E1E1E1;
   border-radius: 4px;
@@ -610,13 +625,14 @@ div {
   font-weight: 400;
   color: #323232;
 }
-.reviews__write-comment-textarea:focus {
+.reviews__write-comment-container-form-div-label-input--textarea:focus {
   border: 1px solid #323232;
 }
-.reviews__write-comment-textarea--error {
+.reviews__write-comment-container-form-div-label-input--textarea--error {
   border: 1px solid red;
 }
-.reviews__comments-comment {
+.reviews__comments-container {
+  width: 100%;
   font-family: "Avenir-Next";
   font-style: normal;
   font-size: 0.8rem;
@@ -629,22 +645,27 @@ div {
   gap: 1rem;
   padding: 1.25rem 0rem;
 }
-.reviews__comments-info-container {
+.reviews__comments-container-user-picture-container {
+  background-color: #dddddd;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.reviews__comments-container-info-container {
+  gap: 1rem;
   width: 100%;
 }
-.reviews__comments-container {
+.reviews__comments-container-info-container-div {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-bottom: 0.5rem;
 }
-.reviews__comments-container-user-picture {
-  background-color: #dddddd;
-  border-radius: 50%;
-  height: 36px;
-  width: 36px;
+.reviews__comments-container-info-container-div-text {
+  line-height: 1rem;
 }
-.reviews__comments-container-user-name {
+.reviews__comments-container-info-container-div-text--user-name {
   font-family: "Avenir-Next";
   font-style: normal;
   font-size: 1.14rem;
@@ -654,7 +675,7 @@ div {
   padding: 0px;
   font-weight: 600;
 }
-.reviews__comments-container-when {
+.reviews__comments-container-info-container-div-text--when {
   font-family: "Avenir-Next";
   font-style: normal;
   font-size: 1.14rem;
@@ -663,4 +684,17 @@ div {
   padding-bottom: 1rem;
   padding: 0px;
   color: #AFAFAF;
+}
+.reviews__comments-container-info-container-comment {
+  font-family: "Avenir-Next";
+  font-style: normal;
+  font-size: 0.8rem;
+  line-height: 1.12rem;
+  font-weight: 400;
+  color: #323232;
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+  gap: 1rem;
+  padding: 1.25rem 0rem;
 }/*# sourceMappingURL=bio.css.map */

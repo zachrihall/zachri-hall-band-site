@@ -27,11 +27,11 @@ function convertDateToMils(date) {
 }
 
 // 1. create the variables using the DOM API
-const userName = document.querySelector(".reviews__write-comment-name-input");
-console.log(userName.innerHTML);
+// const userName = document.querySelector(".reviews__write-comment-name-input");
+// console.log(userName.innerHTML);
 
 //get the form
-const form = document.querySelector(".reviews__write-comment-form");
+const form = document.querySelector(".reviews__write-comment-container-form");
 let commentsContainer = document.querySelector(".reviews__comments");
 
 //empty div for clearing the page
@@ -42,7 +42,7 @@ emptyDiv.classList.add("reviews__comments");
 function createComment(commentObject) {
     //largest comment div
     const commentDiv = document.createElement("div");
-    commentDiv.classList.add("reviews__comments-comment");
+    commentDiv.classList.add("reviews__comments-container");
 
     //div for the picture which is seperate from the conten
     const commentPicDiv = document.createElement("div");
@@ -51,28 +51,47 @@ function createComment(commentObject) {
     //photo div which does not have a photo just blank for the default photo
     const commentPic = document.createElement("div");
 
-    commentPic.classList.add("reviews__comments-container-user-picture");
+    commentPic.classList.add("reviews__comments-container-user-picture-container");
     // appending to the pic div
     commentPicDiv.appendChild(commentPic);
     commentDiv.appendChild(commentPicDiv);
 
+
+
+
+
+
+
     //div for the actual text content of the comment
-    const commentContent = document.createElement("div");
-    commentContent.classList.add("reviews__comments-info-container");
+    // const commentContent = document.createElement("div");
+    // commentContent.classList.add("reviews__comments-container-info-container-div");
 
     //creating comments-info div
     const commentInfoContainer = document.createElement("div");
-    commentInfoContainer.classList.add("reviews__comments-info-container");
+    commentInfoContainer.classList.add("reviews__comments-container-info-container");
 
-    //div for the name and date of the comment
+
+
+    //div for the name and date of the comment - working
     const commentNameDateDiv = document.createElement("div");
-    commentNameDateDiv.classList.add("reviews__comments-container");
+    commentNameDateDiv.classList.add("reviews__comments-container-info-container-div");
+
     //append the date div to the content div
     commentInfoContainer.appendChild(commentNameDateDiv);
 
+
+
+
+
+
+
+
+
+
     //p for the name of the comment
     const commentName = document.createElement("p");
-    commentName.classList.add("reviews__comments-container-user-name");
+    commentName.classList.add("reviews__comments-container-info-container-div-text");
+    commentName.classList.add("reviews__comments-container-info-container-div-text--user-name");
     // add the text grabbed from form !!!!
     commentName.innerText = commentObject.name;
     //appending to parent div
@@ -81,7 +100,8 @@ function createComment(commentObject) {
 
     //p for the date of the comments
     const commentDate = document.createElement("p");
-    commentDate.classList.add("reviews__comments-container-when");
+    commentDate.classList.add("reviews__comments-container-info-container-div-text");
+    commentDate.classList.add("reviews__comments-container-info-container-div-text--when");
     // data from from library for date below !!!!
 
     // Takes the date data from the server and converts it from timestamp to local date
@@ -89,10 +109,10 @@ function createComment(commentObject) {
 
     // console.log(typeof(timestampLocal));
 
-    function logDate(timestamp){
-        if((String(timestamp.toLocaleDateString()).slice(0,2) !== "12") && (String(timestamp.toLocaleDateString()).slice(0,2) !== "11") && (String(timestamp.toLocaleDateString()).slice(0,2) !== "10")){
+    function logDate(timestamp) {
+        if ((String(timestamp.toLocaleDateString()).slice(0, 2) !== "12") && (String(timestamp.toLocaleDateString()).slice(0, 2) !== "11") && (String(timestamp.toLocaleDateString()).slice(0, 2) !== "10")) {
             return "0" + String(timestamp.toLocaleDateString());
-        }else{
+        } else {
             return String(timestamp.toLocaleDateString());
         }
     }
@@ -104,7 +124,7 @@ function createComment(commentObject) {
 
     //create p tag for actual text 
     const commentText = document.createElement("p");
-    commentText.classList.add("reviews__comments-comment");
+    commentText.classList.add("reviews__comments-info-container-comment");
 
     //comment text from the form
     commentText.innerText = commentObject.comment;
@@ -152,47 +172,48 @@ form.addEventListener("submit", (eListen) => {
     eListen.preventDefault();
 
     if (eListen.target.textarea.value === "") {
-        eListen.target.textarea.classList.add("reviews__write-comment-textarea--error");
+        eListen.target.textarea.classList.add("reviews__write-comment-container-form-div-label-input--textarea--error");
     } else {
 
         commentsContainer.innerHTML = "<div></div>";
-        eListen.target.textarea.classList.remove("reviews__write-comment-textarea--error");
-    let formName = new String;
-    let formBody = new String;
+        eListen.target.textarea.classList.remove("reviews__write-comment-container-form-div-label-input--textarea--error");
 
-    formName = eListen.target.name.value;
-    formBody = eListen.target.textarea.value;
+        let formName = new String;
+        let formBody = new String;
 
-    eListen.target.textarea.value = "";
-    eListen.target.name.value = "";
+        formName = eListen.target.name.value;
+        formBody = eListen.target.textarea.value;
 
-    let commentObject = {
-        'name': formName,
-        'comment': formBody
-    }
+        eListen.target.textarea.value = "";
+        eListen.target.name.value = "";
 
-    let post = axios.post("https://project-1-api.herokuapp.com/comments?api_key=dd0da2d8-71b0-47b2-b665-f84a68f5fa55", commentObject);
-    post.then(() => {
-        let req = axios.get("https://project-1-api.herokuapp.com/comments?api_key=dd0da2d8-71b0-47b2-b665-f84a68f5fa55");
-        req.then((e) => {
+        let commentObject = {
+            'name': formName,
+            'comment': formBody
+        }
 
-            // clear div
-            commentsContainer.innerHTML = "<div></div>";
-            commentsContainer.appendChild(firstBreak);
+        let post = axios.post("https://project-1-api.herokuapp.com/comments?api_key=dd0da2d8-71b0-47b2-b665-f84a68f5fa55", commentObject);
+        post.then(() => {
+            let req = axios.get("https://project-1-api.herokuapp.com/comments?api_key=dd0da2d8-71b0-47b2-b665-f84a68f5fa55");
+            req.then((e) => {
 
-            commentsArray = e.data;
-            //sort comments 
-            commentsArray.sort((a, b) => {
-                return b.timestamp - a.timestamp;
+                // clear div
+                commentsContainer.innerHTML = "<div></div>";
+                commentsContainer.appendChild(firstBreak);
+
+                commentsArray = e.data;
+                //sort comments 
+                commentsArray.sort((a, b) => {
+                    return b.timestamp - a.timestamp;
+                })
+
+                for (let i = 0; i < commentsArray.length; i++) {
+                    createComment(commentsArray[i]);
+                }
+
             })
-
-            for (let i = 0; i < commentsArray.length; i++) {
-                createComment(commentsArray[i]);
-            }
-
-        })
-    });
-}
+        });
+    }
 
 })
 
